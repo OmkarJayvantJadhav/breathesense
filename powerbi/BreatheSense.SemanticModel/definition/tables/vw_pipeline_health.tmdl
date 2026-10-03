@@ -1,0 +1,130 @@
+table vw_pipeline_health
+	lineageTag: effe2658-80ea-4552-9c0e-f4dc0c64e49b
+
+	measure 'Minutes Since Last Update' = MAX ( vw_pipeline_health[Minutes Since Last Load] )
+		formatString: 0
+		lineageTag: 4f862cd0-a95d-4fa4-bea6-da9652f76a09
+
+	column 'Last Successful Run (IST)'
+		dataType: dateTime
+		formatString: dd mmm yyyy hh:nn
+		lineageTag: 726335a8-9008-4a72-8a5e-8b65e47d8ccc
+		summarizeBy: none
+		sourceColumn: Last Successful Run (IST)
+
+	column 'Minutes Since Last Successful Run'
+		dataType: double
+		lineageTag: b0131f9a-3bcd-4050-b97a-68bb7caaceeb
+		summarizeBy: sum
+		sourceColumn: Minutes Since Last Successful Run
+
+	column 'Last Run Status'
+		dataType: string
+		lineageTag: d4f7e48c-0ba5-46dc-ac88-0404cce208f1
+		summarizeBy: none
+		sourceColumn: Last Run Status
+
+	column 'Last Run Cohort'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8bbd2c27-a2a4-4f7a-92e8-5ec17fa39918
+		summarizeBy: none
+		sourceColumn: Last Run Cohort
+
+	column 'Last Run API Requests'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1209246f-b5dc-4029-ab01-b85f76040ac8
+		summarizeBy: sum
+		sourceColumn: Last Run API Requests
+
+	column 'Last Run Observations'
+		dataType: int64
+		formatString: 0
+		lineageTag: 63a4f286-1e0b-4b81-be5b-982355602dca
+		summarizeBy: sum
+		sourceColumn: Last Run Observations
+
+	column 'Last Run Invalid'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d30721d-890f-4dea-a15d-a08128d66f91
+		summarizeBy: sum
+		sourceColumn: Last Run Invalid
+
+	column 'Last Run Rows Upserted'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8f05ca30-54c8-449f-9529-de6b5bb7cec0
+		summarizeBy: sum
+		sourceColumn: Last Run Rows Upserted
+
+	column 'Minutes Since Last Load'
+		dataType: double
+		lineageTag: 2ebffe66-8536-479a-94c8-ee10ff9f8ddc
+		summarizeBy: sum
+		sourceColumn: Minutes Since Last Load
+
+	column 'Newest Reading (IST)'
+		dataType: dateTime
+		formatString: dd mmm yyyy hh:nn
+		lineageTag: a64e2826-e1a3-451e-9f88-9da57626abbf
+		summarizeBy: none
+		sourceColumn: Newest Reading (IST)
+
+	column 'Runs (24h)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e8907fb-83ae-4ef0-aa0e-bf27c2058cc9
+		summarizeBy: sum
+		sourceColumn: Runs (24h)
+
+	column 'Failed Runs (24h)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e9170e3-bcf5-49de-b59d-c055505a070b
+		summarizeBy: sum
+		sourceColumn: Failed Runs (24h)
+
+	column 'API Requests (24h)'
+		dataType: int64
+		formatString: 0
+		lineageTag: eb4b5edc-f831-49ce-9b89-50f30a73e55f
+		summarizeBy: sum
+		sourceColumn: API Requests (24h)
+
+	column 'Fresh Stations'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5951a798-daa5-4c11-b7bc-febf8e8ff712
+		summarizeBy: sum
+		sourceColumn: Fresh Stations
+
+	column 'Stale Stations'
+		dataType: int64
+		formatString: 0
+		lineageTag: 988ca6a4-5d54-4427-8fcf-aa58bc82f9e2
+		summarizeBy: sum
+		sourceColumn: Stale Stations
+
+	column 'DB Size MB'
+		dataType: double
+		formatString: 0.0
+		lineageTag: c9099378-394d-4458-ba57-0a4a726b22dc
+		summarizeBy: sum
+		sourceColumn: DB Size MB
+
+	partition vw_pipeline_health = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-dark-moon-b3ti6gml.c-4.ap-southeast-1.aws.neon.tech:5432", "neondb"),
+				    View = Source{[Schema="public",Item="vw_pipeline_health"]}[Data],
+				    Typed = Table.TransformColumnTypes(View, {{"Last Successful Run (IST)", type datetime}, {"Minutes Since Last Successful Run", type number}, {"Last Run Status", type text}, {"Last Run Cohort", Int64.Type}, {"Last Run API Requests", Int64.Type}, {"Last Run Observations", Int64.Type}, {"Last Run Invalid", Int64.Type}, {"Last Run Rows Upserted", Int64.Type}, {"Minutes Since Last Load", type number}, {"Newest Reading (IST)", type datetime}, {"Runs (24h)", Int64.Type}, {"Failed Runs (24h)", Int64.Type}, {"API Requests (24h)", Int64.Type}, {"Fresh Stations", Int64.Type}, {"Stale Stations", Int64.Type}, {"DB Size MB", type number}})
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,303 @@
+table vw_location_aqi_now
+	lineageTag: b2365691-f2f0-402e-8915-1b2e7b2ca20f
+
+	measure 'Current Station AQI' =
+			IF (
+			    HASONEVALUE ( vw_location_aqi_now[Station] ),
+			    MAX ( vw_location_aqi_now[BreatheSense AQI] ),
+			    BLANK ()
+			)
+		formatString: 0
+		lineageTag: 5aff54b1-d243-4a3d-a953-bb6cb7d9249c
+
+	measure 'Median Station AQI' = MEDIAN ( vw_location_aqi_now[BreatheSense AQI] )
+		formatString: 0
+		lineageTag: f05b1e8f-2fcc-4c5c-97d4-6b3697787722
+
+	measure 'Max Station AQI' = MAX ( vw_location_aqi_now[BreatheSense AQI] )
+		formatString: 0
+		lineageTag: e64966d5-c55e-44bd-8863-605747647c72
+
+	measure 'Avg AQI 24h' =
+			// mean of station AQIs, each already based on its trailing 24 h / 8 h windows
+			AVERAGE ( vw_location_aqi_now[BreatheSense AQI] )
+		formatString: 0
+		lineageTag: b778483e-7805-444e-9bd3-2cc9a33d0d3e
+
+	measure 'AQI Category Color' =
+			// conditional-format helper; use on the median or on a single station
+			VAR v = [Median Station AQI]
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        ISBLANK ( v ), "#BFBFBF",
+			        v <= 50, "#00B050",
+			        v <= 100, "#92D050",
+			        v <= 200, "#FFFF00",
+			        v <= 300, "#FF9900",
+			        v <= 400, "#FF0000",
+			        "#C00000"
+			    )
+		lineageTag: 7ca20d4e-a396-40a4-b782-776ede0d577f
+
+	column 'Location ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5aa8c188-3c1d-4ecf-904b-011f65bc82b2
+		summarizeBy: none
+		sourceColumn: Location ID
+
+	column Station
+		dataType: string
+		lineageTag: 89b4ea82-47d2-4f4a-afff-985140773cf0
+		summarizeBy: none
+		sourceColumn: Station
+
+	column City
+		dataType: string
+		lineageTag: c0ac39ca-e9e2-4bf1-88c2-93ec41452ecf
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: City
+
+	column State
+		dataType: string
+		lineageTag: 955e12b6-b087-46b1-852e-60731caf695e
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: State
+
+	column Latitude
+		dataType: double
+		lineageTag: d53a07c4-4d04-4500-8ba1-7f48eb754561
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+	column Longitude
+		dataType: double
+		lineageTag: 12f655cc-8c9f-4dfc-b6b0-e81d99924824
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+	column 'Last Observed (IST)'
+		dataType: dateTime
+		formatString: dd mmm yyyy hh:nn
+		lineageTag: f3fef841-6b3b-4551-983b-06d36f3e25bb
+		summarizeBy: none
+		sourceColumn: Last Observed (IST)
+
+	column last_observed_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b7ca6107-aec7-4c17-af06-550d873b53e5
+		summarizeBy: none
+		sourceColumn: last_observed_utc
+
+	column 'Hours Since Last Observation'
+		dataType: double
+		formatString: 0.0
+		lineageTag: baa0af41-05e3-40ea-b71b-cb8621d79722
+		summarizeBy: sum
+		sourceColumn: Hours Since Last Observation
+
+	column 'Is Fresh'
+		dataType: boolean
+		lineageTag: b90a384f-0fad-4bb9-88b9-6ce546b134dd
+		summarizeBy: none
+		sourceColumn: Is Fresh
+
+	column 'PM2.5 24h Avg'
+		dataType: double
+		lineageTag: ec41f7d0-77a3-4fac-aac3-9989cf1a2502
+		summarizeBy: sum
+		sourceColumn: PM2.5 24h Avg
+
+	column 'PM2.5 Hours'
+		dataType: int64
+		formatString: 0
+		lineageTag: 69a4493d-2b4a-42f6-9d02-5815feac5278
+		summarizeBy: sum
+		sourceColumn: PM2.5 Hours
+
+	column 'PM10 24h Avg'
+		dataType: double
+		lineageTag: d019df05-4813-43fd-9ce3-f049f37d2db6
+		summarizeBy: sum
+		sourceColumn: PM10 24h Avg
+
+	column 'PM10 Hours'
+		dataType: int64
+		formatString: 0
+		lineageTag: 60e86112-f533-4651-974a-ca25559651bc
+		summarizeBy: sum
+		sourceColumn: PM10 Hours
+
+	column 'NO2 24h Avg'
+		dataType: double
+		lineageTag: a6204dd5-6b83-46c3-88fd-fa9d20ca3627
+		summarizeBy: sum
+		sourceColumn: NO2 24h Avg
+
+	column 'NO2 Hours'
+		dataType: int64
+		formatString: 0
+		lineageTag: a8fba4b5-228a-4a29-93a4-f670cc29d2e1
+		summarizeBy: sum
+		sourceColumn: NO2 Hours
+
+	column 'SO2 24h Avg'
+		dataType: double
+		lineageTag: 0e3a5f32-2621-4432-b7a5-5c45018cc17f
+		summarizeBy: sum
+		sourceColumn: SO2 24h Avg
+
+	column 'SO2 Hours'
+		dataType: int64
+		formatString: 0
+		lineageTag: d210092b-a150-44a0-8105-49300c2e6dbf
+		summarizeBy: sum
+		sourceColumn: SO2 Hours
+
+	column 'O3 8h Avg'
+		dataType: double
+		lineageTag: 9e1f7e29-4b13-40df-bfcb-34ae765a770f
+		summarizeBy: sum
+		sourceColumn: O3 8h Avg
+
+	column 'O3 Hours (8h)'
+		dataType: int64
+		formatString: 0
+		lineageTag: cd9a8761-c81e-4181-8c81-882bbd87ae62
+		summarizeBy: sum
+		sourceColumn: O3 Hours (8h)
+
+	column 'CO 8h Avg'
+		dataType: double
+		lineageTag: 3415563c-b643-47cc-b57a-0f3ab7483f22
+		summarizeBy: sum
+		sourceColumn: CO 8h Avg
+
+	column 'CO Hours (8h)'
+		dataType: int64
+		formatString: 0
+		lineageTag: aae96b74-0fd9-4d35-8ede-c96a787af159
+		summarizeBy: sum
+		sourceColumn: CO Hours (8h)
+
+	column 'PM2.5 Sub-index'
+		dataType: double
+		lineageTag: a0f5e531-e289-425b-b62c-db955b28e6a6
+		summarizeBy: sum
+		sourceColumn: PM2.5 Sub-index
+
+	column 'PM10 Sub-index'
+		dataType: double
+		lineageTag: ceb5a6b9-c336-4f07-a555-2a1b6bf05602
+		summarizeBy: sum
+		sourceColumn: PM10 Sub-index
+
+	column 'NO2 Sub-index'
+		dataType: double
+		lineageTag: 566c59a7-6437-46ba-84e8-c5af2e8fb7d0
+		summarizeBy: sum
+		sourceColumn: NO2 Sub-index
+
+	column 'SO2 Sub-index'
+		dataType: double
+		lineageTag: 4f514998-78f6-4093-99ae-151da5781093
+		summarizeBy: sum
+		sourceColumn: SO2 Sub-index
+
+	column 'O3 Sub-index'
+		dataType: double
+		lineageTag: 200720c2-1d95-44fd-9c0f-af671744d41f
+		summarizeBy: sum
+		sourceColumn: O3 Sub-index
+
+	column 'CO Sub-index'
+		dataType: double
+		lineageTag: dc741167-b056-44dd-b608-bf2b95acd76c
+		summarizeBy: sum
+		sourceColumn: CO Sub-index
+
+	column 'Pollutants With Complete Windows'
+		dataType: int64
+		formatString: 0
+		lineageTag: a6eafeb4-c409-4325-b379-a2daf828a669
+		summarizeBy: sum
+		sourceColumn: Pollutants With Complete Windows
+
+	column 'BreatheSense AQI'
+		dataType: int64
+		formatString: 0
+		lineageTag: 54bde2cc-744b-4918-92de-1e6de2017db0
+		summarizeBy: sum
+		sourceColumn: BreatheSense AQI
+
+	column 'AQI Category'
+		dataType: string
+		lineageTag: 45b537a0-674d-41ad-8a1d-322668381e58
+		summarizeBy: none
+		sourceColumn: AQI Category
+		sortByColumn: 'AQI Category Order'
+
+	column 'AQI Color'
+		dataType: string
+		lineageTag: 59ffd826-3458-4a89-8672-6fe4488e5746
+		summarizeBy: none
+		sourceColumn: AQI Color
+
+	column 'Dominant Pollutant'
+		dataType: string
+		lineageTag: 4b014928-1368-49be-8919-013333a9648d
+		summarizeBy: none
+		sourceColumn: Dominant Pollutant
+
+	column 'AQI Invalid Reason'
+		dataType: string
+		lineageTag: bfde2efb-5702-4cfe-9374-7d65d8e11b67
+		summarizeBy: none
+		sourceColumn: AQI Invalid Reason
+
+	column 'Gas Unit Convention'
+		dataType: string
+		lineageTag: 3df1b497-26f0-4765-8412-97e20cc20c54
+		summarizeBy: none
+		sourceColumn: Gas Unit Convention
+
+	column Provider
+		dataType: string
+		lineageTag: db0f9dda-18f3-458b-aa61-d04ac7560541
+		summarizeBy: none
+		sourceColumn: Provider
+
+	column 'AQI Category Order' = VAR a = ROUND ( vw_location_aqi_now[BreatheSense AQI], 0 ) RETURN SWITCH ( TRUE (), ISBLANK ( a ), 7, a <= 50, 1, a <= 100, 2, a <= 200, 3, a <= 300, 4, a <= 400, 5, 6 )
+		formatString: 0
+		lineageTag: a5c5417b-0491-494d-8799-ba52d81f75c7
+		summarizeBy: none
+
+	column 'AQI Category Label' = IF ( ISBLANK ( vw_location_aqi_now[AQI Category] ), "Insufficient data", vw_location_aqi_now[AQI Category] )
+		lineageTag: 3b167d2d-18a1-4fd6-8564-8840774454fe
+		summarizeBy: none
+		sortByColumn: 'AQI Category Order'
+
+	column 'Dominant Pollutant Label' = SWITCH ( vw_location_aqi_now[Dominant Pollutant], "pm25", "PM2.5", "pm10", "PM10", "no2", "NO₂", "so2", "SO₂", "o3", "O₃", "co", "CO", "nh3", "NH₃", "pb", "Pb", "Not determined" )
+		lineageTag: d5d13a78-83da-447d-864a-8ed01b65cbad
+		summarizeBy: none
+
+	partition vw_location_aqi_now = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-dark-moon-b3ti6gml.c-4.ap-southeast-1.aws.neon.tech:5432", "neondb"),
+				    View = Source{[Schema="public",Item="vw_location_aqi_now"]}[Data],
+				    Typed = Table.TransformColumnTypes(View, {{"Location ID", Int64.Type}, {"Station", type text}, {"City", type text}, {"State", type text}, {"Latitude", type number}, {"Longitude", type number}, {"Last Observed (IST)", type datetime}, {"last_observed_utc", type datetimezone}, {"Hours Since Last Observation", type number}, {"Is Fresh", type logical}, {"PM2.5 24h Avg", type number}, {"PM2.5 Hours", Int64.Type}, {"PM10 24h Avg", type number}, {"PM10 Hours", Int64.Type}, {"NO2 24h Avg", type number}, {"NO2 Hours", Int64.Type}, {"SO2 24h Avg", type number}, {"SO2 Hours", Int64.Type}, {"O3 8h Avg", type number}, {"O3 Hours (8h)", Int64.Type}, {"CO 8h Avg", type number}, {"CO Hours (8h)", Int64.Type}, {"PM2.5 Sub-index", type number}, {"PM10 Sub-index", type number}, {"NO2 Sub-index", type number}, {"SO2 Sub-index", type number}, {"O3 Sub-index", type number}, {"CO Sub-index", type number}, {"Pollutants With Complete Windows", Int64.Type}, {"BreatheSense AQI", Int64.Type}, {"AQI Category", type text}, {"AQI Color", type text}, {"Dominant Pollutant", type text}, {"AQI Invalid Reason", type text}, {"Gas Unit Convention", type text}, {"Provider", type text}})
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,150 @@
+{
+ "sensor_id": 12234787,
+ "parameter": "pm25",
+ "results": [
+  {
+   "period": {
+    "label": "1day",
+    "interval": "24:00:00",
+    "datetimeFrom": {
+     "utc": "2026-09-19T18:30:00Z",
+     "local": "2026-09-20T00:00:00+05:30"
+    },
+    "datetimeTo": {
+     "utc": "2026-09-20T18:30:00Z",
+     "local": "2026-09-21T00:00:00+05:30"
+    }
+   },
+   "value": 89.4,
+   "coverage": {
+    "expectedCount": 24,
+    "expectedInterval": "24:00:00",
+    "observedCount": 24,
+    "observedInterval": "24:00:00",
+    "percentComplete": 100.0,
+    "percentCoverage": 100.0,
+    "datetimeFrom": {
+     "utc": "2026-09-19T18:45:00Z",
+     "local": "2026-09-20T00:15:00+05:30"
+    },
+    "datetimeTo": {
+     "utc": "2026-09-20T18:30:00Z",
+     "local": "2026-09-21T00:00:00+05:30"
+    }
+   },
+   "parameter": {
+    "id": 2,
+    "name": "pm25",
+    "units": "µg/m³"
+   }
+  },
+  {
+   "period": {
+    "label": "1day",
+    "interval": "24:00:00",
+    "datetimeFrom": {
+     "utc": "2026-09-20T18:30:00Z",
+     "local": "2026-09-21T00:00:00+05:30"
+    },
+    "datetimeTo": {
+     "utc": "2026-09-21T18:30:00Z",
+     "local": "2026-09-22T00:00:00+05:30"
+    }
+   },
+   "value": 77.5,
+   "coverage": {
+    "expectedCount": 24,
+    "expectedInterval": "24:00:00",
+    "observedCount": 22,
+    "observedInterval": "22:00:00",
+    "percentComplete": 92.0,
+    "percentCoverage": 92.0,
+    "datetimeFrom": {
+     "utc": "2026-09-20T18:45:00Z",
+     "local": "2026-09-21T00:15:00+05:30"
+    },
+    "datetimeTo": {
+     "utc": "2026-09-21T18:30:00Z",
+     "local": "2026-09-22T00:00:00+05:30"
+    }
+   },
+   "parameter": {
+    "id": 2,
+    "name": "pm25",
+    "units": "µg/m³"
+   }
+  },
+  {
+   "period": {
+    "label": "1day",
+    "interval": "24:00:00",
+    "datetimeFrom": {
+     "utc": "2026-09-21T18:30:00Z",
+     "local": "2026-09-22T00:00:00+05:30"
+    },
+    "datetimeTo": {
+     "utc": "2026-09-22T18:30:00Z",
+     "local": "2026-09-23T00:00:00+05:30"
+    }
+   },
+   "value": 76.5,
+   "coverage": {
+    "expectedCount": 24,
+    "expectedInterval": "24:00:00",
+    "observedCount": 24,
+    "observedInterval": "24:00:00",
+    "percentComplete": 100.0,
+    "percentCoverage": 100.0,
+    "datetimeFrom": {
+     "utc": "2026-09-21T18:45:00Z",
+     "local": "2026-09-22T00:15:00+05:30"
+    },
+    "datetimeTo": {
+     "utc": "2026-09-22T18:15:00Z",
+     "local": "2026-09-22T23:45:00+05:30"
+    }
+   },
+   "parameter": {
+    "id": 2,
+    "name": "pm25",
+    "units": "µg/m³"
+   }
+  },
+  {
+   "period": {
+    "label": "1day",
+    "interval": "24:00:00",
+    "datetimeFrom": {
+     "utc": "2026-09-22T18:30:00Z",
+     "local": "2026-09-23T00:00:00+05:30"
+    },
+    "datetimeTo": {
+     "utc": "2026-09-23T18:30:00Z",
+     "local": "2026-09-24T00:00:00+05:30"
+    }
+   },
+   "value": 77.4,
+   "coverage": {
+    "expectedCount": 24,
+    "expectedInterval": "24:00:00",
+    "observedCount": 24,
+    "observedInterval": "24:00:00",
+    "percentComplete": 100.0,
+    "percentCoverage": 100.0,
+    "datetimeFrom": {
+     "utc": "2026-09-22T18:45:00Z",
+     "local": "2026-09-23T00:15:00+05:30"
+    },
+    "datetimeTo": {
+     "utc": "2026-09-23T18:30:00Z",
+     "local": "2026-09-24T00:00:00+05:30"
+    }
+   },
+   "parameter": {
+    "id": 2,
+    "name": "pm25",
+    "units": "µg/m³"
+   }
+  }
+ ]
+}

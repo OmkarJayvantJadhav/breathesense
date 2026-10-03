@@ -1,0 +1,42 @@
+table Calendar
+	lineageTag: 93cd82cd-0702-457d-9bc0-85acbcdaf749
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Short Date
+		lineageTag: 2c76ad48-9f1a-4d82-b85d-61cf08d7f8e2
+		summarizeBy: none
+		sourceColumn: [Date]
+
+	column Year = YEAR ( 'Calendar'[Date] )
+		formatString: 0
+		lineageTag: 116555ee-4c63-40a4-b226-5f40a82b0d5e
+		summarizeBy: none
+
+	column 'Month Number' = MONTH ( 'Calendar'[Date] )
+		formatString: 0
+		lineageTag: 9cdf67fa-fd42-4496-b843-4e4a28da581d
+		summarizeBy: none
+
+	column Month = FORMAT ( 'Calendar'[Date], "MMM" )
+		lineageTag: f1157a64-5f77-4757-bbc0-a6aa96b0e0b1
+		summarizeBy: none
+		sortByColumn: 'Month Number'
+
+	column 'Year Month' = FORMAT ( 'Calendar'[Date], "YYYY-MM" )
+		lineageTag: 1410775e-8497-4fc4-a72f-194d3ac43d44
+		summarizeBy: none
+
+	column 'Month Start' = DATE ( YEAR ( 'Calendar'[Date] ), MONTH ( 'Calendar'[Date] ), 1 )
+		formatString: mmm yyyy
+		lineageTag: 22aa06b1-6964-4df2-ba29-2bef0391311c
+		summarizeBy: none
+
+	partition Calendar = calculated
+		mode: import
+		source = CALENDAR ( DATE ( 2018, 1, 1 ), TODAY () )
+
+	annotation PBI_Id = d62684eb-02d4-4d6d-9220-01b4d4d37cd0
+

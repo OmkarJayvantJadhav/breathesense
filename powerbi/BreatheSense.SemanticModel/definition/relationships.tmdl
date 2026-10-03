@@ -1,0 +1,4 @@
+relationship e0f0426c-ad56-4f9c-a37e-6253a0f07e8b
+	fromColumn: vw_city_daily_all.Date
+	toColumn: Calendar.Date
+

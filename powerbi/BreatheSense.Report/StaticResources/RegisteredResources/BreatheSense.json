@@ -1,0 +1,58 @@
+{
+  "name": "BreatheSense",
+  "dataColors": [
+    "#00B050",
+    "#92D050",
+    "#FFFF00",
+    "#FF9900",
+    "#FF0000",
+    "#C00000",
+    "#1F4E79",
+    "#5B9BD5",
+    "#7F7F7F",
+    "#A5A5A5"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#262626",
+  "tableAccent": "#1F4E79",
+  "good": "#00B050",
+  "neutral": "#FFFF00",
+  "bad": "#C00000",
+  "maximum": "#C00000",
+  "center": "#FFFF00",
+  "minimum": "#00B050",
+  "textClasses": {
+    "callout": {
+      "fontSize": 28,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#262626"
+    },
+    "title": {
+      "fontSize": 14,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#262626"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#262626"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#595959"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "show": true,
+            "fontSize": 14
+          }
+        ]
+      }
+    }
+  }
+}

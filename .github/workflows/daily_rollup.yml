@@ -1,0 +1,83 @@
+# Daily location sync + /days city rollup + hourly-based rollup + retention.
+# 19:00 UTC = 00:30 IST, so "yesterday IST" is complete. GitHub starts it a few hours late in practice.
+# The /days step makes ~2,700 requests at 30/min (~90 min), so the job needs a long timeout; the shared
+# concurrency group makes hourly_etl runs wait instead of overlapping.
+name: daily_rollup
+
+on:
+  schedule:
+    - cron: "0 19 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "IST date to roll up, YYYY-MM-DD (blank = yesterday IST)"
+        required: false
+        default: ""
+
+concurrency:
+  group: openaq-api            # shared with hourly_etl: never overlap OpenAQ usage
+  cancel-in-progress: false
+
+permissions:
+  contents: write              # commit last_run.json
+
+env:
+  PYTHONUNBUFFERED: "1"        # stream logs live in the Actions UI
+
+jobs:
+  rollup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Sync locations and sensors
+        run: python -m src.sync_locations
+
+      # Complete city-days from /days whatever the cron lag (GitHub fires the "hourly" job only ~4x/day,
+      # so hourly data alone rarely gives 18 complete hours per station). Rows never overwrite live rows.
+      - name: Daily /days rollup
+        env:
+          ROLLUP_DATE: ${{ github.event.inputs.date }}
+        run: |
+          if [ -n "$ROLLUP_DATE" ]; then
+            python -m src.rollup_days --date "$ROLLUP_DATE"
+          else
+            python -m src.rollup_days
+          fi
+
+      - name: Daily rollup and retention
+        env:
+          ROLLUP_DATE: ${{ github.event.inputs.date }}
+        run: |
+          if [ -n "$ROLLUP_DATE" ]; then
+            python -m src.rollup --date "$ROLLUP_DATE"
+          else
+            python -m src.rollup
+          fi
+
+      # Keeps scheduled workflows alive (GitHub disables them after 60 days
+      # without repository activity) and publishes pipeline status.
+      - name: Commit last_run.json
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add last_run.json
+          if git diff --cached --quiet; then
+            echo "last_run.json unchanged"
+          else
+            git commit -m "chore: update last_run.json [skip ci]"
+            git pull --rebase
+            git push
+          fi

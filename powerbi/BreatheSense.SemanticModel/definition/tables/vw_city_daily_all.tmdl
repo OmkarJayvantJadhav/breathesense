@@ -1,0 +1,241 @@
+table vw_city_daily_all
+	lineageTag: a79fc241-e399-442f-9504-aae49bfd5f18
+
+	measure 'PM2.5 7D Rolling Avg' =
+			VAR d = MAX ( 'Calendar'[Date] )
+			RETURN
+			    CALCULATE (
+			        AVERAGE ( vw_city_daily_all[Avg PM2.5] ),
+			        DATESBETWEEN ( 'Calendar'[Date], d - 6, d )
+			    )
+		formatString: 0.0
+		lineageTag: a47c7c36-23f9-43f2-bc94-af5458ba21d6
+
+	measure 'PM2.5 30D Rolling Avg' =
+			VAR d = MAX ( 'Calendar'[Date] )
+			RETURN
+			    CALCULATE (
+			        AVERAGE ( vw_city_daily_all[Avg PM2.5] ),
+			        DATESBETWEEN ( 'Calendar'[Date], d - 29, d )
+			    )
+		formatString: 0.0
+		lineageTag: 6edb80c7-647d-4aab-a6b9-46144d040284
+
+	measure 'PM2.5 MoM %' =
+			// blank when the previous month has no data (there is no CPCB history in 2023-2024)
+			VAR cur = AVERAGE ( vw_city_daily_all[Avg PM2.5] )
+			VAR prev = CALCULATE ( AVERAGE ( vw_city_daily_all[Avg PM2.5] ), DATEADD ( 'Calendar'[Date], -1, MONTH ) )
+			RETURN
+			    DIVIDE ( cur - prev, prev )
+		formatString: 0.0%
+		lineageTag: 5a53e3c5-beae-4381-ad5a-2e11b68a56c3
+
+	measure 'Poor-or-Worse Hours %' =
+			// live days only: Hours Poor or Worse is blank for backfilled days
+			VAR hrs = SUM ( vw_city_daily_all[Hours Poor or Worse] )
+			VAR days = CALCULATE ( COUNTROWS ( vw_city_daily_all ), NOT ISBLANK ( vw_city_daily_all[Hours Poor or Worse] ) )
+			RETURN
+			    DIVIDE ( hrs, days * 24 )
+		formatString: 0.0%
+		lineageTag: 578ab14e-e6dd-4548-9a0b-68515b4238bb
+
+	measure 'Poor-or-Worse Days %' =
+			// works for live and backfilled days: median station AQI >= 201
+			DIVIDE (
+			    CALCULATE ( COUNTROWS ( vw_city_daily_all ), vw_city_daily_all[Median Station AQI] >= 201 ),
+			    CALCULATE ( COUNTROWS ( vw_city_daily_all ), NOT ISBLANK ( vw_city_daily_all[Median Station AQI] ) )
+			)
+		formatString: 0.0%
+		lineageTag: 19c6983c-8c37-4c2a-b776-d05819456f08
+
+	measure 'Poor-or-Worse Hours % (label)' = IF ( ISBLANK ( [Poor-or-Worse Hours %] ), "No hourly data", FORMAT ( [Poor-or-Worse Hours %], "0.0%" ) )
+		lineageTag: 4e60162a-0d02-4647-a813-5370ec9552ce
+
+	column City
+		dataType: string
+		lineageTag: 7e950102-3db1-4b1a-a664-fa9c04bd20d8
+		summarizeBy: none
+		sourceColumn: City
+
+	column State
+		dataType: string
+		lineageTag: 08319fe3-cf8f-4ca6-91df-1ef43874622d
+		summarizeBy: none
+		sourceColumn: State
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: cb6e14e2-2bdd-4924-9d36-2edb908a6cb3
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 93839357-2a72-4fdf-8a11-29c7f4475d19
+		summarizeBy: none
+		sourceColumn: Year
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 18bd9a28-3280-4d13-8ffe-e118cc800c47
+		summarizeBy: none
+		sourceColumn: Month
+
+	column 'Month Name'
+		dataType: string
+		lineageTag: ce48bc5f-9db9-42dc-a889-4c4f3ea80087
+		summarizeBy: none
+		sourceColumn: Month Name
+		sortByColumn: Month
+
+	column 'Day of Week'
+		dataType: string
+		lineageTag: 0d3e5a13-27d9-445b-83f5-a6dbed1519cf
+		summarizeBy: none
+		sourceColumn: Day of Week
+
+	column Season
+		dataType: string
+		lineageTag: 2d15518e-f3d3-4c60-b692-2b8b774ac4ba
+		summarizeBy: none
+		sourceColumn: Season
+
+	column 'Is Festival'
+		dataType: boolean
+		lineageTag: 17b0051e-f1bb-4cb3-be62-34869ec528a8
+		summarizeBy: none
+		sourceColumn: Is Festival
+
+	column Festival
+		dataType: string
+		lineageTag: b74ef964-e7c4-4355-a830-a526621695ef
+		summarizeBy: none
+		sourceColumn: Festival
+
+	column 'Avg PM2.5'
+		dataType: double
+		lineageTag: fb2d86a3-16be-4a0d-a72b-2314bd94e916
+		summarizeBy: sum
+		sourceColumn: Avg PM2.5
+
+	column 'Avg PM10'
+		dataType: double
+		lineageTag: 48d7fc72-cfc2-4c3c-a017-d5810f47358f
+		summarizeBy: sum
+		sourceColumn: Avg PM10
+
+	column 'Avg NO2'
+		dataType: double
+		lineageTag: 130c5fab-6920-4036-b2e2-3c91c2ccd7be
+		summarizeBy: sum
+		sourceColumn: Avg NO2
+
+	column 'Avg SO2'
+		dataType: double
+		lineageTag: 79898cd8-6eca-4103-962a-852addfa226f
+		summarizeBy: sum
+		sourceColumn: Avg SO2
+
+	column 'Avg O3'
+		dataType: double
+		lineageTag: efbbc626-5a98-4a9e-be65-343dd27571db
+		summarizeBy: sum
+		sourceColumn: Avg O3
+
+	column 'Avg CO'
+		dataType: double
+		lineageTag: 3893884c-a317-4586-a9c3-65b0f7baea1f
+		summarizeBy: sum
+		sourceColumn: Avg CO
+
+	column 'Median Station AQI'
+		dataType: double
+		lineageTag: 10783e25-d4ea-491a-a8dd-989de42ba44a
+		summarizeBy: sum
+		sourceColumn: Median Station AQI
+
+	column 'Max Station AQI'
+		dataType: int64
+		formatString: 0
+		lineageTag: 64851b29-f958-48b6-8e9c-a16ac44f8372
+		summarizeBy: sum
+		sourceColumn: Max Station AQI
+
+	column 'Median AQI Category'
+		dataType: string
+		lineageTag: 353195b9-3a2e-4bfc-be58-4e9378aaaf06
+		summarizeBy: none
+		sourceColumn: Median AQI Category
+		sortByColumn: 'Median AQI Category Order'
+
+	column 'Dominant Pollutant'
+		dataType: string
+		lineageTag: 610509c9-e31b-457d-86f7-a05c37d4c7d9
+		summarizeBy: none
+		sourceColumn: Dominant Pollutant
+
+	column 'Max Hourly PM2.5'
+		dataType: double
+		lineageTag: 1889fd12-5df7-4746-9a79-081bd0ecdc51
+		summarizeBy: sum
+		sourceColumn: Max Hourly PM2.5
+
+	column 'Hours Poor or Worse'
+		dataType: int64
+		formatString: 0
+		lineageTag: b5fb292b-d518-4344-91e3-b043c962c54f
+		summarizeBy: sum
+		sourceColumn: Hours Poor or Worse
+
+	column 'Reporting Stations'
+		dataType: int64
+		formatString: 0
+		lineageTag: 172c7018-f932-4e25-90e2-b6eb11c530f4
+		summarizeBy: sum
+		sourceColumn: Reporting Stations
+
+	column Source
+		dataType: string
+		lineageTag: 74702774-f255-4ccf-889c-fbeba8eadf1e
+		summarizeBy: none
+		sourceColumn: Source
+
+	column 'O3/CO Daily-Mean Approximation'
+		dataType: boolean
+		lineageTag: d3391f58-d72d-4f59-aacd-22b2be81ae58
+		summarizeBy: none
+		sourceColumn: O3/CO Daily-Mean Approximation
+
+	column 'Median AQI Category Order' = VAR a = ROUND ( vw_city_daily_all[Median Station AQI], 0 ) RETURN SWITCH ( TRUE (), ISBLANK ( a ), 7, a <= 50, 1, a <= 100, 2, a <= 200, 3, a <= 300, 4, a <= 400, 5, 6 )
+		formatString: 0
+		lineageTag: 5c792f8a-3fac-47bd-ab16-0e46d328a20f
+		summarizeBy: none
+
+	column 'Median AQI Category Label' = IF ( ISBLANK ( vw_city_daily_all[Median AQI Category] ), "Insufficient data", vw_city_daily_all[Median AQI Category] )
+		lineageTag: ba217c48-75e4-429b-a603-bb554a99daed
+		summarizeBy: none
+		sortByColumn: 'Median AQI Category Order'
+
+	column 'Dominant Pollutant Label' = SWITCH ( vw_city_daily_all[Dominant Pollutant], "pm25", "PM2.5", "pm10", "PM10", "no2", "NO₂", "so2", "SO₂", "o3", "O₃", "co", "CO", "nh3", "NH₃", "pb", "Pb", "Not determined" )
+		lineageTag: bb401665-533a-48db-8647-83b1bbdc8f40
+		summarizeBy: none
+
+	partition vw_city_daily_all = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-dark-moon-b3ti6gml.c-4.ap-southeast-1.aws.neon.tech:5432", "neondb"),
+				    View = Source{[Schema="public",Item="vw_city_daily_all"]}[Data],
+				    Typed = Table.TransformColumnTypes(View, {{"City", type text}, {"State", type text}, {"Date", type date}, {"Year", Int64.Type}, {"Month", Int64.Type}, {"Month Name", type text}, {"Day of Week", type text}, {"Season", type text}, {"Is Festival", type logical}, {"Festival", type text}, {"Avg PM2.5", type number}, {"Avg PM10", type number}, {"Avg NO2", type number}, {"Avg SO2", type number}, {"Avg O3", type number}, {"Avg CO", type number}, {"Median Station AQI", type number}, {"Max Station AQI", Int64.Type}, {"Median AQI Category", type text}, {"Dominant Pollutant", type text}, {"Max Hourly PM2.5", type number}, {"Hours Poor or Worse", Int64.Type}, {"Reporting Stations", Int64.Type}, {"Source", type text}, {"O3/CO Daily-Mean Approximation", type logical}})
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

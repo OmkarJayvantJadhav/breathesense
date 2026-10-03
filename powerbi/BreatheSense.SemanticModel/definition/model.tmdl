@@ -1,0 +1,26 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["vw_location_aqi_now","vw_city_latest","vw_last_24h","vw_active_alerts","vw_city_daily_all","vw_data_quality","vw_pipeline_health"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table vw_location_aqi_now
+ref table vw_city_latest
+ref table vw_last_24h
+ref table vw_active_alerts
+ref table vw_city_daily_all
+ref table vw_data_quality
+ref table vw_pipeline_health
+ref table Calendar
+
+ref cultureInfo en-US
+

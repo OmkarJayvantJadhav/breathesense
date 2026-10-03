@@ -1,0 +1,83 @@
+table vw_city_latest
+	lineageTag: 318dbd56-c308-4def-8726-e6c328ee60b3
+
+	measure 'Reporting Stations (fresh)' = COALESCE ( SUM ( vw_city_latest[Reporting Stations] ), 0 )
+		formatString: 0
+		lineageTag: 9a562386-cf04-42c9-9f38-cee2f30782b3
+
+	measure 'Cities Monitored' = COALESCE ( DISTINCTCOUNT ( vw_city_latest[City] ), 0 )
+		formatString: 0
+		lineageTag: 03e20cec-066f-4fc2-8303-02e3f86f4f14
+
+	column City
+		dataType: string
+		lineageTag: 5e3af2f7-dabf-49a5-be50-dc6feb7e5f68
+		summarizeBy: none
+		sourceColumn: City
+
+	column State
+		dataType: string
+		lineageTag: c557fdd7-fda0-45d3-b3f6-eadd140218c7
+		summarizeBy: none
+		sourceColumn: State
+
+	column 'Median Station AQI'
+		dataType: double
+		lineageTag: 2a88e819-062a-473c-8592-c6b527091e7c
+		summarizeBy: sum
+		sourceColumn: Median Station AQI
+
+	column 'Max Station AQI'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0bf9013b-15a3-4259-b3a6-27bf5176f1ae
+		summarizeBy: sum
+		sourceColumn: Max Station AQI
+
+	column 'Reporting Stations'
+		dataType: int64
+		formatString: 0
+		lineageTag: 55ea82cf-9506-48c5-ac35-d8d31a85eb66
+		summarizeBy: sum
+		sourceColumn: Reporting Stations
+
+	column 'Alerting Stations'
+		dataType: int64
+		formatString: 0
+		lineageTag: cfc99957-bd72-48c7-a966-9d25a1bebdcd
+		summarizeBy: sum
+		sourceColumn: Alerting Stations
+
+	column 'Most Frequent Dominant Pollutant'
+		dataType: string
+		lineageTag: 61c630ef-bf98-4819-b55a-6c1033a436db
+		summarizeBy: none
+		sourceColumn: Most Frequent Dominant Pollutant
+
+	column 'Latest Observation (IST)'
+		dataType: dateTime
+		formatString: dd mmm yyyy hh:nn
+		lineageTag: a855e6d7-4c86-4a68-bb7d-03de9a428fb3
+		summarizeBy: none
+		sourceColumn: Latest Observation (IST)
+
+	column Note
+		dataType: string
+		lineageTag: 8379b552-e0b6-4453-8fd8-7a5cda567065
+		summarizeBy: none
+		sourceColumn: Note
+
+	partition vw_city_latest = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-dark-moon-b3ti6gml.c-4.ap-southeast-1.aws.neon.tech:5432", "neondb"),
+				    View = Source{[Schema="public",Item="vw_city_latest"]}[Data],
+				    Typed = Table.TransformColumnTypes(View, {{"City", type text}, {"State", type text}, {"Median Station AQI", type number}, {"Max Station AQI", Int64.Type}, {"Reporting Stations", Int64.Type}, {"Alerting Stations", Int64.Type}, {"Most Frequent Dominant Pollutant", type text}, {"Latest Observation (IST)", type datetime}, {"Note", type text}})
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

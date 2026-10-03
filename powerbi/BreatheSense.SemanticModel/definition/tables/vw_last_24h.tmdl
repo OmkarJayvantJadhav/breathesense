@@ -1,0 +1,92 @@
+table vw_last_24h
+	lineageTag: c05865b7-b153-4679-ab9a-d7a23c815138
+
+	measure 'Peak Hours Note' = IF ( ISEMPTY ( vw_last_24h ), "No readings in the last 24 hours - the upstream feed is behind (see Data Quality)", "Mean of city hourly averages · markers are actual hours, no smoothing" )
+		lineageTag: 79506815-051e-4ad5-9234-e099aab0ff5e
+
+	measure 'Peak Hours Note Color' = IF ( ISEMPTY ( vw_last_24h ), "#B4532A", "#6B7785" )
+		lineageTag: 339689a7-7563-45f5-8ce6-7e8bb3e3c656
+
+	column City
+		dataType: string
+		lineageTag: bd607173-7564-49fd-bebd-fb3b5e9f94f4
+		summarizeBy: none
+		sourceColumn: City
+
+	column State
+		dataType: string
+		lineageTag: f416cb1a-da70-4428-9561-6736433f4d70
+		summarizeBy: none
+		sourceColumn: State
+
+	column 'Hour (IST)'
+		dataType: dateTime
+		formatString: dd mmm hh:nn
+		lineageTag: 188e295e-2c9f-41d4-a3ad-e21fe50d7b4e
+		summarizeBy: none
+		sourceColumn: Hour (IST)
+
+	column hour_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 51837c00-5805-4f25-aed7-2dc0721654a5
+		summarizeBy: none
+		sourceColumn: hour_utc
+
+	column 'PM2.5'
+		dataType: double
+		lineageTag: e1b91e29-83ea-4190-bb69-bf99f4b43a17
+		summarizeBy: sum
+		sourceColumn: PM2.5
+
+	column PM10
+		dataType: double
+		lineageTag: 2f909335-ce20-4dc2-930d-fe56ca60a2a1
+		summarizeBy: sum
+		sourceColumn: PM10
+
+	column NO2
+		dataType: double
+		lineageTag: ef278ad5-7700-487d-b9f4-c2987723e0cc
+		summarizeBy: sum
+		sourceColumn: NO2
+
+	column SO2
+		dataType: double
+		lineageTag: 7ed5ea21-ecd4-436f-a2d9-c5d8b183b6db
+		summarizeBy: sum
+		sourceColumn: SO2
+
+	column O3
+		dataType: double
+		lineageTag: f40de56c-b2b5-4cdf-b9eb-b932aa7ee96b
+		summarizeBy: sum
+		sourceColumn: O3
+
+	column CO
+		dataType: double
+		lineageTag: 9b889ec8-b652-4e8d-b242-2ed7c655381b
+		summarizeBy: sum
+		sourceColumn: CO
+
+	column 'Stations Reporting'
+		dataType: int64
+		formatString: 0
+		lineageTag: dfe7c437-0fc8-4710-8653-3b0221f19115
+		summarizeBy: sum
+		sourceColumn: Stations Reporting
+
+	partition vw_last_24h = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-dark-moon-b3ti6gml.c-4.ap-southeast-1.aws.neon.tech:5432", "neondb"),
+				    View = Source{[Schema="public",Item="vw_last_24h"]}[Data],
+				    Typed = Table.TransformColumnTypes(View, {{"City", type text}, {"State", type text}, {"Hour (IST)", type datetime}, {"hour_utc", type datetimezone}, {"PM2.5", type number}, {"PM10", type number}, {"NO2", type number}, {"SO2", type number}, {"O3", type number}, {"CO", type number}, {"Stations Reporting", Int64.Type}})
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

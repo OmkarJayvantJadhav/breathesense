@@ -1,0 +1,51 @@
+# Hourly ingestion. Each run fetches one of 6 station cohorts
+# (utc_hour % 6) over a 9 h window: <= ~485 OpenAQ requests, ~10 min at 50/min.
+name: hourly_etl
+
+on:
+  schedule:
+    - cron: "15 * * * *"        # UTC; GitHub may start a few minutes late
+  workflow_dispatch:
+    inputs:
+      cohort:
+        description: "Cohort 0-5 (blank = current UTC hour % 6)"
+        required: false
+        default: ""
+
+# Shared with daily_rollup: the two jobs never call OpenAQ at the same time
+# (together they would exceed 60 requests/minute). A queued run waits.
+concurrency:
+  group: openaq-api
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  PYTHONUNBUFFERED: "1"        # stream logs live in the Actions UI
+
+jobs:
+  etl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Hourly ETL
+        env:
+          OPENAQ_API_KEY: ${{ secrets.OPENAQ_API_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          COHORT: ${{ github.event.inputs.cohort }}
+        run: |
+          if [ -n "$COHORT" ]; then
+            python -m src.main --cohort "$COHORT"
+          else
+            python -m src.main
+          fi

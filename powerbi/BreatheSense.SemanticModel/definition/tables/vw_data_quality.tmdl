@@ -1,0 +1,125 @@
+table vw_data_quality
+	lineageTag: fd9a4389-4439-45ce-b02e-5d1246d6fc95
+
+	measure 'Fresh Stations' = COALESCE ( CALCULATE ( COUNTROWS ( vw_data_quality ), vw_data_quality[Is Fresh] = TRUE () ), 0 )
+		formatString: 0
+		lineageTag: 66b0bf59-9fab-45c8-ad0a-c2498ae80aff
+
+	measure 'Stale Stations' = COALESCE ( CALCULATE ( COUNTROWS ( vw_data_quality ), vw_data_quality[Is Fresh] = FALSE () ), 0 )
+		formatString: 0
+		lineageTag: 1f353c99-1c27-493d-a7e4-ebf58fe9bc43
+
+	measure 'Data Completeness %' =
+			// average share of the last 24 hours with data, across the selected stations
+			DIVIDE ( AVERAGE ( vw_data_quality[Completeness % (24h)] ), 100 )
+		formatString: 0.0%
+		lineageTag: 83ddb1db-898c-4c29-b458-090fa28901b6
+
+	column 'Location ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 63e48755-ee26-4f4b-9049-90bbe0a7eff2
+		summarizeBy: none
+		sourceColumn: Location ID
+
+	column Station
+		dataType: string
+		lineageTag: ccf3a93a-cafd-404f-b19f-b5f4962cd47e
+		summarizeBy: none
+		sourceColumn: Station
+
+	column City
+		dataType: string
+		lineageTag: c1b9a763-9bd7-4989-8e78-5f2510f1671b
+		summarizeBy: none
+		sourceColumn: City
+
+	column State
+		dataType: string
+		lineageTag: 583ce5f0-6188-4f62-b7e9-8468826ef6d0
+		summarizeBy: none
+		sourceColumn: State
+
+	column Provider
+		dataType: string
+		lineageTag: 4d185690-b727-4288-9cca-d2993ba38518
+		summarizeBy: none
+		sourceColumn: Provider
+
+	column 'Gas Unit Convention'
+		dataType: string
+		lineageTag: af7aa390-a15c-437a-9401-a7225bdc3a4b
+		summarizeBy: none
+		sourceColumn: Gas Unit Convention
+
+	column 'Last Stored Hour (IST)'
+		dataType: dateTime
+		formatString: dd mmm yyyy hh:nn
+		lineageTag: a6d73b24-ccc4-4037-ab2b-72c7ce0b15d9
+		summarizeBy: none
+		sourceColumn: Last Stored Hour (IST)
+
+	column 'Hours Since Last Data'
+		dataType: double
+		formatString: 0.0
+		lineageTag: 46a265c2-c98b-4bfb-9a6a-2d43a56974b3
+		summarizeBy: sum
+		sourceColumn: Hours Since Last Data
+
+	column 'Is Fresh'
+		dataType: boolean
+		lineageTag: cd2a24b0-a95e-48d6-a84d-65dc0181b6cb
+		summarizeBy: none
+		sourceColumn: Is Fresh
+
+	column 'Hours With Data (24h)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 32da5cd7-6054-4b3c-997b-8833fafd3772
+		summarizeBy: sum
+		sourceColumn: Hours With Data (24h)
+
+	column 'Completeness % (24h)'
+		dataType: double
+		formatString: 0.0
+		lineageTag: 0c8a1f4e-09d7-4130-9901-e2b323b51b45
+		summarizeBy: sum
+		sourceColumn: Completeness % (24h)
+
+	column 'Low Coverage Hours (24h)'
+		dataType: int64
+		formatString: 0
+		lineageTag: af4d26b0-2832-432b-9d7c-d14d75f3bd0d
+		summarizeBy: sum
+		sourceColumn: Low Coverage Hours (24h)
+
+	column 'Live Pollutant Sensors'
+		dataType: string
+		lineageTag: f3c92d03-9f9a-4a7f-acdd-4c4c77b1368c
+		summarizeBy: none
+		sourceColumn: Live Pollutant Sensors
+
+	column 'Pollutants Missing (24h)'
+		dataType: string
+		lineageTag: 0d8266ba-bda9-418b-863b-1d075df04be2
+		summarizeBy: none
+		sourceColumn: Pollutants Missing (24h)
+
+	column Freshness = IF ( vw_data_quality[Is Fresh], "Fresh", "Stale" )
+		lineageTag: 76546fa6-e51e-4f10-b268-8ca185285e69
+		summarizeBy: none
+
+	partition vw_data_quality = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-dark-moon-b3ti6gml.c-4.ap-southeast-1.aws.neon.tech:5432", "neondb"),
+				    View = Source{[Schema="public",Item="vw_data_quality"]}[Data],
+				    Typed = Table.TransformColumnTypes(View, {{"Location ID", Int64.Type}, {"Station", type text}, {"City", type text}, {"State", type text}, {"Provider", type text}, {"Gas Unit Convention", type text}, {"Last Stored Hour (IST)", type datetime}, {"Hours Since Last Data", type number}, {"Is Fresh", type logical}, {"Hours With Data (24h)", Int64.Type}, {"Completeness % (24h)", type number}, {"Low Coverage Hours (24h)", Int64.Type}, {"Live Pollutant Sensors", type text}, {"Pollutants Missing (24h)", type text}})
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+data/samples/
+data/backfill_cache/
+*.pbix
+*.log
+# Power BI project: local cache and machine settings (the .pbix itself is ignored above)
+**/.pbi/cache.abf
+**/.pbi/localSettings.json

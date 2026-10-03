@@ -1,0 +1,389 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "vw_location_aqi_now.max_station_aqi": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_location_aqi_now",
+			          "ConceptualProperty": "Max Station AQI"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vw_location_aqi_now.median_station_aqi": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_location_aqi_now",
+			          "ConceptualProperty": "Median Station AQI"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Median station AQI": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vw_location_aqi_now.current_station_aqi": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_location_aqi_now",
+			          "ConceptualProperty": "Current Station AQI"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "AQI": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vw_city_daily_all.poororworse_days_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_city_daily_all",
+			          "ConceptualProperty": "Poor-or-Worse Days %"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vw_city_daily_all.poororworse_hours_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_city_daily_all",
+			          "ConceptualProperty": "Poor-or-Worse Hours %"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vw_data_quality.data_completeness_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_data_quality",
+			          "ConceptualProperty": "Data Completeness %"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vw_location_aqi_now.city": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_location_aqi_now",
+			          "ConceptualProperty": "City"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "City": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vw_location_aqi_now.dominant_pollutant": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_location_aqi_now",
+			          "ConceptualProperty": "Dominant Pollutant"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vw_location_aqi_now.aqi_category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_location_aqi_now",
+			          "ConceptualProperty": "AQI Category"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "vw_location_aqi_now.state": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_location_aqi_now",
+			          "ConceptualProperty": "State"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "State": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "calendar.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendar",
+			          "ConceptualProperty": "Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Date range": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vw_city_daily_all.city": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_city_daily_all",
+			          "ConceptualProperty": "City"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "City": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "City (daily history)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vw_last_24h.city": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_last_24h",
+			          "ConceptualProperty": "City"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "City (last 24 hours)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vw_location_aqi_now.aqi_category_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_location_aqi_now",
+			          "ConceptualProperty": "AQI Category Label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Category": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "AQI category": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vw_location_aqi_now.dominant_pollutant_label": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_location_aqi_now",
+			          "ConceptualProperty": "Dominant Pollutant Label"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Dominant": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Dominant pollutant": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vw_active_alerts.aqi_category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_active_alerts",
+			          "ConceptualProperty": "AQI Category"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Category": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vw_city_daily_all.pm2_5_7d_rolling_avg": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_city_daily_all",
+			          "ConceptualProperty": "PM2.5 7D Rolling Avg"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "7-day avg": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vw_city_daily_all.pm2_5_30d_rolling_avg": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_city_daily_all",
+			          "ConceptualProperty": "PM2.5 30D Rolling Avg"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "30-day avg": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vw_city_daily_all.pm2_5_mom_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_city_daily_all",
+			          "ConceptualProperty": "PM2.5 MoM %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Change vs previous month": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "vw_data_quality.pollutants_missing_24h": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "vw_data_quality",
+			          "ConceptualProperty": "Pollutants Missing (24h)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pollutants missing (24 h)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

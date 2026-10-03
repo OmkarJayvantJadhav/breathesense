@@ -1,0 +1,473 @@
+location_id,location_name,convention,n_hours,median_ratio_ugm3,median_ratio_ppb,window_end_utc
+17,"R K Puram, Delhi - DPCC",ugm3,48,1.0,0.564,2026-09-24T17:30:00+00:00
+50,"Punjabi Bagh, Delhi - DPCC",ugm3,47,1.001,0.547,2026-09-24T17:30:00+00:00
+235,"Anand Vihar, New Delhi - DPCC",ugm3,46,0.998,0.576,2026-09-24T17:30:00+00:00
+301,"Vikas Sadan, Gurugram - HSPCB",unclassified,48,2.841,1.807,2026-09-24T17:30:00+00:00
+407,"Zoo Park, Hyderabad - TSPCB",ugm3,48,0.993,0.609,2026-09-24T17:30:00+00:00
+860,"Sanjay Palace, Agra - UPPCB",ugm3,48,1.001,0.601,2026-09-24T17:30:00+00:00
+2456,"Talkatora District Industries Center, Lucknow - CPCB",ugm3,48,1.0,0.677,2026-09-24T17:30:00+00:00
+2583,"Sector-6, Panchkula - HSPCB",unclassified,34,1.265,0.76,2026-09-24T17:30:00+00:00
+2586,"Manali, Chennai - CPCB",ppb,48,1.652,1.0,2026-09-24T17:30:00+00:00
+5404,"Pusa, Delhi - IMD",unclassified,48,0.614,0.363,2026-09-24T17:30:00+00:00
+5408,"Secretariat, Amaravati - APPCB",ugm3,48,1.001,0.567,2026-09-23T21:45:00+00:00
+5541,"Burari Crossing, New Delhi - IMD",unclassified,47,0.618,0.36,2026-09-24T14:45:00+00:00
+5542,"Civil Line, Jalandhar - PPCB",ppb,48,1.631,1.0,2026-09-24T17:30:00+00:00
+5544,"Model Town, Patiala - PPCB",unclassified,48,1.45,0.945,2026-09-24T17:30:00+00:00
+5548,"BTM Layout, Bengaluru - CPCB",ppb,48,1.636,0.984,2026-09-24T17:30:00+00:00
+5551,"Golden Temple, Amritsar - PPCB",ppb,48,1.5,0.968,2026-09-24T17:30:00+00:00
+5559,"Collectorate, Gaya - BSPCB",unclassified,30,0.907,0.629,2026-09-24T17:30:00+00:00
+5565,"MIDC Khutala, Chandrapur - MPCB",unclassified,14,1.117,0.717,2026-09-24T17:30:00+00:00
+5566,"Talcher Coalfields,Talcher - OSPCB",unclassified,4,,,2026-09-24T17:30:00+00:00
+5569,"Punjab Agricultural University, Ludhiana - PPCB",unclassified,48,1.139,0.716,2026-09-24T17:30:00+00:00
+5570,"Aya Nagar, New Delhi - IMD",ugm3,48,0.999,0.73,2026-09-24T17:30:00+00:00
+5574,"City Railway Station, Bengaluru - KSPCB",unclassified,1,,,2026-09-24T17:30:00+00:00
+5576,"Moti Doongri, Alwar - RSPCB",ppb,48,1.56,1.0,2026-09-24T17:30:00+00:00
+5585,"Ashok Nagar, Udaipur - RSPCB",ppb,45,1.525,0.993,2026-09-24T17:30:00+00:00
+5586,"Sirifort, Delhi - CPCB",unclassified,48,1.356,0.908,2026-09-24T17:30:00+00:00
+5587,"Collectorate, Jodhpur - RSPCB",unclassified,48,0.892,0.662,2026-09-24T17:30:00+00:00
+5588,"RIICO Ind. Area III, Bhiwadi - RSPCB",ppb,47,1.576,0.996,2026-09-24T17:30:00+00:00
+5590,"Ardhali Bazar, Varanasi - UPPCB",ugm3,47,1.001,0.58,2026-09-24T17:30:00+00:00
+5592,"Gangapur Road, Nashik - MPCB",unclassified,48,0.819,0.587,2026-09-24T17:30:00+00:00
+5598,"Sector - 125, Noida, UP - UPPCB",ugm3,47,1.0,0.585,2026-09-24T17:30:00+00:00
+5599,"Bollaram Industrial Area, Hyderabad - TSPCB",unclassified,0,,,2026-09-24T17:30:00+00:00
+5602,"Asansol Court Area, Asansol - WBPCB",ugm3,46,0.974,0.599,2026-09-24T17:30:00+00:00
+5603,"Sector-2 Industrial Area, Pithampur - MPPCB",unclassified,48,0.858,0.517,2026-09-24T17:30:00+00:00
+5607,"Peenya, Bengaluru - CPCB",ppb,48,1.734,1.02,2026-09-24T17:30:00+00:00
+5608,"GM Office, Brajrajnagar - OSPCB",ppb,48,1.542,1.0,2026-09-24T17:30:00+00:00
+5609,"Anam Kala Kendram, Rajamahendravaram - APPCB",ugm3,48,0.999,0.618,2026-09-24T17:30:00+00:00
+5610,"North Campus, DU, Delhi - IMD",unclassified,48,0.583,0.33,2026-09-24T17:30:00+00:00
+5612,"Shastri Nagar, Jaipur - RSPCB",ppb,48,1.597,1.0,2026-09-24T17:30:00+00:00
+5613,"ITO, New Delhi - CPCB",ugm3,48,1.0,0.588,2026-09-24T17:30:00+00:00
+5614,"Padmapukur, Howrah - WBPCB",ugm3,48,0.96,0.629,2026-09-24T17:30:00+00:00
+5615,"Sidhu Kanhu Indoor Stadium, Durgapur - WBPCB",ugm3,48,0.997,0.624,2026-09-24T17:30:00+00:00
+5616,"Sector - 62, Noida, UP - IMD",ugm3,14,0.999,0.737,2026-09-24T17:30:00+00:00
+5619,"Vindhyachal STPS, Singrauli - MPPCB",unclassified,0,,,2026-09-23T14:00:00+00:00
+5621,"Opp GPO Civil Lines, Nagpur - MPCB",ugm3,48,0.981,0.551,2026-09-24T17:30:00+00:00
+5622,"NSIT Dwarka, Delhi - CPCB",ugm3,46,1.001,0.588,2026-09-24T14:15:00+00:00
+5623,"Central University, Hyderabad - TSPCB",ugm3,48,1.001,0.568,2026-09-24T17:30:00+00:00
+5624,"IDA Pashamylaram, Hyderabad - TSPCB",unclassified,43,0.922,0.547,2026-09-24T17:30:00+00:00
+5625,"RIMT University, Mandi Gobindgarh - PPCB",ppb,48,1.561,0.973,2026-09-24T17:30:00+00:00
+5626,"DTU, New Delhi - CPCB",ppb,48,1.478,1.0,2026-09-24T17:30:00+00:00
+5627,"CRRI Mathura Road, New Delhi - IMD",ugm3,47,0.999,0.605,2026-09-24T17:30:00+00:00
+5628,"GVM Corporation, Visakhapatnam - APPCB",ugm3,48,1.0,0.594,2026-09-24T17:30:00+00:00
+5630,"Shadipur, Delhi - CPCB",ugm3,48,0.995,0.579,2026-09-24T17:30:00+00:00
+5631,"Maninagar, Ahmedabad - GPCB",unclassified,48,0.917,0.566,2026-09-24T17:30:00+00:00
+5632,"Sector-D Industrial Area, Mandideep - MPPCB",ugm3,44,1.001,0.551,2026-09-24T17:30:00+00:00
+5633,"Police Commissionerate, Jaipur - RSPCB",unclassified,48,0.426,0.257,2026-09-24T17:30:00+00:00
+5634,"Lodhi Road, New Delhi - IMD",ugm3,48,0.999,0.588,2026-09-24T17:30:00+00:00
+5635,"Adarsh Nagar, Jaipur - RSPCB",ppb,48,1.438,1.0,2026-09-24T17:30:00+00:00
+5636,"Shrinath Puram, Kota - RSPCB",ppb,43,1.255,0.965,2026-09-24T16:30:00+00:00
+5638,"Indira Colony Vistar, Pali - RSPCB",ppb,42,1.428,1.0,2026-09-24T17:30:00+00:00
+5642,"More Chowk Waluj, Aurangabad - MPCB",unclassified,44,1.077,0.585,2026-09-24T17:30:00+00:00
+5644,"Sanegurava Halli, Bengaluru - KSPCB",unclassified,11,,,2026-09-24T01:30:00+00:00
+5645,"ICRISAT Patancheru, Hyderabad - TSPCB",ugm3,39,1.0,0.558,2026-09-24T17:30:00+00:00
+5646,"Plammoodu, Thiruvananthapuram - Kerala PCB",ugm3,48,0.999,0.691,2026-09-24T17:15:00+00:00
+5647,"Sanathnagar, Hyderabad - TSPCB",ugm3,47,0.965,0.583,2026-09-24T17:30:00+00:00
+5648,"Ward-32 Bapupara, Siliguri - WBPCB",ugm3,48,1.003,0.641,2026-09-24T17:30:00+00:00
+5649,"Tirumala, Tirupati - APPCB",ugm3,48,1.0,0.583,2026-09-24T17:30:00+00:00
+5650,"IGI Airport (T3), Delhi - IMD",unclassified,48,0.575,0.323,2026-09-24T17:30:00+00:00
+5652,"IGSC Planetarium Complex, Patna - BSPCB",ugm3,47,0.997,0.623,2026-09-24T17:30:00+00:00
+5655,"Velachery Res. Area, Chennai - CPCB",ppb,39,1.758,1.0,2026-09-24T17:30:00+00:00
+5659,"Lalbagh, Lucknow - CPCB",ugm3,48,1.004,0.684,2026-09-24T17:30:00+00:00
+5662,"Nehru Nagar, Kanpur - UPPCB",ugm3,48,1.0,0.563,2026-09-24T17:30:00+00:00
+5665,"Vasundhara, Ghaziabad - UPPCB",ugm3,48,1.0,0.573,2026-09-24T17:30:00+00:00
+5667,"Bhopal Chauraha, Dewas - MPPCB",ugm3,48,1.001,0.543,2026-09-24T17:30:00+00:00
+6356,"Pusa, Delhi - DPCC",ugm3,48,1.0,0.585,2026-09-24T17:30:00+00:00
+6358,"Mandir Marg, New Delhi - DPCC",ugm3,48,1.001,0.562,2026-09-24T17:30:00+00:00
+6359,"IHBAS, Dilshad Garden,New Delhi - CPCB",unclassified,48,0.935,0.542,2026-09-24T17:30:00+00:00
+6442,"Ratanpura, Rupnagar - Ambuja Cements",ppb,48,1.583,0.994,2026-09-24T17:30:00+00:00
+6443,"Bandhavgar Colony, Satna - Birla Cement",ppb,48,1.547,1.01,2026-09-24T17:30:00+00:00
+6923,"New Mandi, Muzaffarnagar - UPPCB",unclassified,46,0.767,0.418,2026-09-24T17:30:00+00:00
+6924,"Indirapuram, Ghaziabad - UPPCB",ugm3,48,1.0,0.557,2026-09-24T17:30:00+00:00
+6929,"Major Dhyan Chand National Stadium, Delhi - DPCC",ugm3,48,1.0,0.566,2026-09-24T17:30:00+00:00
+6930,"Gobind Pura, Yamuna Nagar - HSPCB",unclassified,48,1.713,1.101,2026-09-24T17:30:00+00:00
+6931,"Dwarka-Sector 8, Delhi - DPCC",ugm3,47,1.001,0.555,2026-09-24T16:30:00+00:00
+6932,"Alipur, Delhi - DPCC",ugm3,48,1.001,0.561,2026-09-24T17:30:00+00:00
+6933,"Shasthri Nagar, Ratlam - IPCA Lab",ppb,48,1.861,0.999,2026-09-24T17:30:00+00:00
+6934,"Dr. Karni Singh Shooting Range, Delhi - DPCC",ugm3,47,0.997,0.622,2026-09-24T17:30:00+00:00
+6935,"Urban Estate-II, Hisar - HSPCB",ppb,48,1.501,1.0,2026-09-24T17:30:00+00:00
+6936,"Arya Nagar, Bahadurgarh - HSPCB",ppb,48,1.627,0.961,2026-09-24T17:30:00+00:00
+6937,"Sector-10, Gandhinagar - GPCB",ppb,48,1.652,1.003,2026-09-24T17:30:00+00:00
+6938,"Vivek Vihar, Delhi - DPCC",ugm3,48,1.0,0.55,2026-09-24T17:30:00+00:00
+6939,"Hardev Nagar, Bathinda - PPCB",ppb,48,1.65,0.999,2026-09-24T17:30:00+00:00
+6940,"Kalal Majra, Khanna - PPCB",unclassified,42,1.408,0.867,2026-09-24T17:30:00+00:00
+6942,"Phase-4 GIDC, Vatva - GPCB",ppb,48,1.611,0.997,2026-09-24T17:30:00+00:00
+6943,"Mahape, Navi Mumbai - MPCB",unclassified,48,1.93,1.366,2026-09-24T17:30:00+00:00
+6944,"H.B. Colony, Bhiwani - HSPCB",unclassified,48,1.112,0.724,2026-09-24T17:30:00+00:00
+6945,"Kurla, Mumbai - MPCB",ppb,48,1.432,0.999,2026-09-24T17:30:00+00:00
+6946,"Belur Math, Howrah - WBPCB",ugm3,48,1.003,0.667,2026-09-24T17:30:00+00:00
+6947,"General Hospital, Mandikhera - HSPCB",unclassified,48,1.196,0.782,2026-09-24T17:30:00+00:00
+6948,"Chhatrapati Shivaji Intl. Airport (T2), Mumbai - MPCB",ppb,48,1.399,1.0,2026-09-24T17:30:00+00:00
+6949,"Municipal Corporation Office, Dharuhera -  HSPCB",unclassified,48,1.083,0.684,2026-09-24T17:30:00+00:00
+6950,"Jadavpur, Kolkata - WBPCB",ugm3,48,0.986,0.699,2026-09-24T17:30:00+00:00
+6951,"Murthal, Sonipat - HSPCB",unclassified,48,0.856,0.497,2026-09-24T17:30:00+00:00
+6952,"F-Block, Sirsa - HSPCB",ppb,48,1.52,0.975,2026-09-24T17:30:00+00:00
+6953,"Sector-2 IMT, Manesar - HSPCB",ugm3,43,1.043,0.725,2026-09-24T17:30:00+00:00
+6954,"Chikkaballapur Rural, Chikkaballapur - KSPCB",unclassified,47,0.881,0.559,2026-09-24T17:30:00+00:00
+6955,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",unclassified,9,,,2026-09-24T16:45:00+00:00
+6956,"Powai, Mumbai - MPCB",unclassified,46,2.606,1.759,2026-09-22T12:45:00+00:00
+6957,"Jawaharlal Nehru Stadium, Delhi - DPCC",ugm3,46,0.999,0.639,2026-09-24T17:30:00+00:00
+6958,"Sector-18, Panipat - HSPCB",unclassified,48,1.105,0.723,2026-09-24T17:30:00+00:00
+6959,"Siddharth Nagar-Worli, Mumbai - IITM",unclassified,48,0.826,0.467,2026-09-24T17:30:00+00:00
+6960,"Patparganj, Delhi - DPCC",ugm3,42,1.001,0.566,2026-09-24T05:00:00+00:00
+6962,"GIDC, Ankleshwar - GPCB",ppb,46,1.552,1.0,2026-09-22T18:00:00+00:00
+6963,"Police Lines, Jind - HSPCB",unclassified,48,1.854,1.139,2026-09-24T17:30:00+00:00
+6964,"Patti Mehar, Ambala - HSPCB",ppb,29,1.397,0.994,2026-09-24T17:30:00+00:00
+6965,"Borivali East, Mumbai - MPCB",ppb,46,1.427,0.995,2026-09-23T11:00:00+00:00
+6966,"Udyogamandal, Eloor - Kerala PCB",ppb,48,1.456,0.983,2026-09-24T17:30:00+00:00
+6967,"Sion, Mumbai - MPCB",unclassified,0,,,2026-09-23T05:15:00+00:00
+6968,"Phase-1 GIDC, Vapi - GPCB",ppb,46,1.606,1.003,2026-09-24T17:30:00+00:00
+6969,"Huda Sector, Fatehabad - HSPCB",ppb,48,1.564,0.988,2026-09-24T17:30:00+00:00
+6970,"Shastri Nagar, Narnaul - HSPCB",ppb,48,1.529,0.997,2026-09-24T17:30:00+00:00
+6971,"Rishi Nagar, Kaithal - HSPCB",unclassified,48,1.686,1.068,2026-09-24T17:30:00+00:00
+6972,"Nathu Colony, Ballabgarh - HSPCB",unclassified,48,0.816,0.517,2026-09-24T17:30:00+00:00
+6973,"Jayanagar 5th Block, Bengaluru - KSPCB",ugm3,48,0.998,0.567,2026-09-24T17:30:00+00:00
+6974,"Bapuji Nagar, Bengaluru - KSPCB",ugm3,48,1.0,0.561,2026-09-24T17:30:00+00:00
+6975,"Silk Board, Bengaluru - KSPCB",ugm3,24,1.001,0.591,2026-09-24T17:30:00+00:00
+6976,"Jai Bhim Nagar, Meerut - UPPCB",ugm3,47,1.0,0.638,2026-09-24T17:30:00+00:00
+6978,"Knowledge Park - III, Greater Noida - UPPCB",ugm3,48,1.0,0.591,2026-09-24T17:30:00+00:00
+6980,"Sector-1, Noida - UPPCB",ugm3,47,1.0,0.602,2026-09-24T17:30:00+00:00
+6981,"Fort William, Kolkata - WBPCB",ugm3,48,0.993,0.64,2026-09-24T17:30:00+00:00
+6983,"Hombegowda Nagar, Bengaluru - KSPCB",ugm3,37,0.998,0.563,2026-09-24T17:30:00+00:00
+6984,"Hebbal, Bengaluru - KSPCB",unclassified,0,,,2026-09-24T17:30:00+00:00
+6985,"Yamunapuram, Bulandshahr - UPPCB",ugm3,46,1.0,0.613,2026-09-24T17:30:00+00:00
+6986,"Knowledge Park - V, Greater Noida - UPPCB",ugm3,48,1.0,0.591,2026-09-24T17:30:00+00:00
+6988,"Sector-116, Noida - UPPCB",ugm3,48,1.0,0.553,2026-09-24T17:30:00+00:00
+7005,"Loni, Ghaziabad - UPPCB",unclassified,47,0.449,0.243,2026-09-24T17:30:00+00:00
+7140,"Gomti Nagar, Lucknow - UPPCB",unclassified,48,1.527,0.925,2026-09-24T17:30:00+00:00
+7280,"Shyam Nagar, Palwal - HSPCB",unclassified,42,1.432,0.892,2026-09-24T17:30:00+00:00
+7282,"Sector-7, Kurukshetra - HSPCB",unclassified,48,0.671,0.461,2026-09-24T17:30:00+00:00
+7283,"MD University, Rohtak - HSPCB",ppb,48,1.504,1.026,2026-09-24T17:30:00+00:00
+7289,"Hebbal 1st Stage, Mysuru - KSPCB",ppb,42,1.733,1.0,2026-09-23T02:00:00+00:00
+7292,"Chhoti Gwaltoli, Indore - MPPCB",ugm3,48,1.001,0.556,2026-09-24T17:30:00+00:00
+7494,"SFTI Kusdihra, Gaya - BSPCB",ugm3,48,1.0,0.576,2026-09-24T17:30:00+00:00
+7495,"DRM Office Danapur, Patna - BSPCB",unclassified,48,2.267,1.279,2026-09-24T17:30:00+00:00
+7720,"Pallavpuram Phase 2, Meerut - UPPCB",ugm3,38,1.0,0.616,2026-09-24T17:30:00+00:00
+7752,"Khadakpada, Kalyan - MPCB",ppb,48,1.372,1.0,2026-09-24T09:00:00+00:00
+7833,"Ganga Nagar, Meerut - UPPCB",ugm3,48,1.0,0.583,2026-09-24T17:30:00+00:00
+7880,"Sikulpuikawn, Aizawl - Mizoram PCB",unclassified,48,1.665,1.155,2026-09-24T17:30:00+00:00
+7901,"Corporation Ground, Thrissur- Kerala PCB",ppb,48,1.472,0.965,2026-09-24T17:30:00+00:00
+8035,"Ibrahimpur, Vijayapura - KSPCB",ppb,45,1.532,0.999,2026-09-09T02:45:00+00:00
+8153,"Urban, Chamarajanagar - KSPCB",ppb,33,1.74,1.001,2026-09-24T17:30:00+00:00
+8190,"Kariavattom, Thiruvananthapuram - Kerala PCB",ppb,48,1.702,0.998,2026-09-24T17:30:00+00:00
+8235,"Jahangirpuri, Delhi - DPCC",ugm3,48,1.0,0.576,2026-09-24T17:30:00+00:00
+8239,"Okhla Phase-2, Delhi - DPCC",ugm3,48,1.0,0.577,2026-09-24T17:30:00+00:00
+8245,"Gole Bazar, Katni - MPPCB",ugm3,48,0.996,0.641,2026-09-24T17:30:00+00:00
+8319,"Anand Vihar, Hapur - UPPCB",ugm3,47,1.0,0.627,2026-09-24T17:30:00+00:00
+8365,"Nehru Nagar, Delhi - DPCC",ugm3,38,1.0,0.573,2026-09-24T17:30:00+00:00
+8472,"Bawana, Delhi - DPCC",ugm3,48,1.0,0.625,2026-09-24T17:30:00+00:00
+8475,"Sonia Vihar, Delhi - DPCC",ugm3,42,1.0,0.628,2026-09-24T17:30:00+00:00
+8914,"SIDCO Kurichi, Coimbatore - TNPCB",unclassified,0,,,2026-09-24T17:30:00+00:00
+8915,"Wazirpur, Delhi - DPCC",ugm3,46,1.0,0.584,2026-09-24T17:30:00+00:00
+8917,"Ashok Vihar, Delhi - DPCC",ugm3,48,1.0,0.568,2026-09-24T17:30:00+00:00
+10484,"Sri Aurobindo Marg, Delhi - DPCC",ugm3,48,0.999,0.598,2026-09-24T17:30:00+00:00
+10485,"Narela, Delhi - DPCC",ugm3,48,1.0,0.608,2026-09-24T17:30:00+00:00
+10486,"Mundka, Delhi - DPCC",ugm3,48,1.0,0.584,2026-09-24T17:30:00+00:00
+10488,"Najafgarh, Delhi - DPCC",ugm3,47,1.0,0.588,2026-09-24T17:30:00+00:00
+10545,"Civil Lines, Ajmer - RSPCB",ppb,48,1.604,1.0,2026-09-24T17:30:00+00:00
+10599,"Rajbansi Nagar, Patna - BSPCB",unclassified,48,0.844,0.47,2026-09-24T17:30:00+00:00
+10630,"Govt. High School Shikarpur, Patna - BSPCB",unclassified,44,0.893,0.568,2026-09-24T17:30:00+00:00
+10633,"Victoria, Kolkata - WBPCB",ugm3,46,0.987,0.71,2026-09-24T17:30:00+00:00
+10645,"Industrial Area, Hajipur - BSPCB",ugm3,48,0.983,0.587,2026-09-24T17:30:00+00:00
+10670,"Muradpur, Patna - BSPCB",unclassified,48,1.776,1.187,2026-09-24T17:30:00+00:00
+10697,"Samanpura, Patna - BSPCB",ppb,48,1.497,0.955,2026-09-24T17:30:00+00:00
+10725,"Mini Secretariat, Charkhi Dadri - HSPCB",ppb,48,1.569,0.979,2026-09-24T17:30:00+00:00
+10747,"Thavakkara, Kannur - Kerala PCB",ppb,38,1.687,1.0,2026-09-24T17:30:00+00:00
+10780,"Manali Village, Chennai - TNPCB",ppb,38,1.741,0.999,2026-09-24T17:30:00+00:00
+10820,"Sector 30, Faridabad - HSPCB",unclassified,47,1.238,0.799,2026-09-24T17:30:00+00:00
+10823,"Buddha Colony, Muzaffarpur - BSPCB",ugm3,48,0.983,0.575,2026-09-24T17:30:00+00:00
+10825,"Sector-51, Gurugram - HSPCB",ppb,39,1.528,0.992,2026-09-24T17:30:00+00:00
+10831,"Rohini, Delhi - DPCC",ugm3,48,1.0,0.649,2026-09-24T17:30:00+00:00
+10844,"Ghusuri, Howrah - WBPCB",ugm3,48,0.992,0.676,2026-09-24T17:30:00+00:00
+10851,"Bidhannagar, Kolkata - WBPCB",ugm3,48,0.991,0.693,2026-09-24T17:30:00+00:00
+10895,"Lumpyngngad, Shillong - Meghalaya PCB",unclassified,44,1.074,0.817,2026-09-24T17:30:00+00:00
+10900,"Teri Gram, Gurugram - HSPCB",ppb,48,1.559,0.997,2026-09-24T17:30:00+00:00
+10901,"PWD Juction, Kohima - NPCB",ppb,35,1.611,1.05,2026-09-24T17:30:00+00:00
+10902,"Kalyana Nagara, Chikkamagaluru - KSPCB",ppb,31,1.703,0.974,2026-09-24T17:30:00+00:00
+10903,"Railway Colony, Guwahati - APCB",ppb,48,1.429,1.031,2026-09-24T17:30:00+00:00
+10904,"Rabindra Sarobar, Kolkata - WBPCB",unclassified,48,1.448,0.92,2026-09-24T17:30:00+00:00
+10907,"City Center, Gwalior - MPPCB",unclassified,48,0.928,0.531,2026-09-24T17:30:00+00:00
+10908,"Sector 11, Faridabad - HSPCB",unclassified,48,1.374,0.878,2026-09-24T17:30:00+00:00
+10909,"Vijay Nagar, Ramanagara - KSPCB",unclassified,0,,,2026-09-24T17:30:00+00:00
+10910,"Sector-12, Karnal - HSPCB",unclassified,48,0.677,0.46,2026-09-24T17:30:00+00:00
+10911,"Marhatal, Jabalpur - MPPCB",ugm3,48,0.999,0.649,2026-09-24T17:30:00+00:00
+10913,"T T Nagar, Bhopal - MPPCB",ugm3,48,1.001,0.551,2026-09-24T17:30:00+00:00
+10914,"Sector-25, Chandigarh - CPCC",ugm3,48,0.983,0.549,2026-09-24T17:30:00+00:00
+10917,"Sahilara, Maihar - KJS Cements",ppb,16,1.749,0.999,2026-09-23T08:00:00+00:00
+10918,"Ballygunge, Kolkata - WBPCB",ugm3,48,0.987,0.632,2026-09-24T17:30:00+00:00
+10919,"Sanjay Nagar, Ghaziabad - UPPCB",ugm3,48,1.0,0.601,2026-09-24T17:30:00+00:00
+10920,"New Industrial Town, Faridabad - HSPCB",unclassified,41,1.817,1.179,2026-09-24T17:30:00+00:00
+10921,"NISE Gwal Pahari, Gurugram - IMD",ugm3,48,0.999,0.577,2026-09-24T17:30:00+00:00
+11577,"Vinoba Nagara, Shivamogga - KSPCB",ppb,45,1.765,0.97,2026-09-23T02:30:00+00:00
+11578,"Royapuram, Chennai - TNPCB",unclassified,31,1.617,1.058,2026-09-24T17:30:00+00:00
+11579,"Kodungaiyur, Chennai - TNPCB",ugm3,32,1.003,0.706,2026-09-24T17:30:00+00:00
+11580,"Meelavittan, Thoothukudi - TNPCB",unclassified,31,0.811,0.52,2026-09-24T17:30:00+00:00
+11581,"Arumbakkam, Chennai - TNPCB",ugm3,31,0.978,0.548,2026-09-24T17:30:00+00:00
+11582,"Stuart Hill, Madikeri - KSPCB",ugm3,36,0.975,0.588,2026-09-24T17:30:00+00:00
+11603,"Chandni Chowk, Delhi - IITM",ppb,47,1.436,0.999,2026-09-24T17:30:00+00:00
+11606,"Borivali East, Mumbai - IITM",ugm3,48,1.047,0.611,2026-09-24T17:30:00+00:00
+11609,"Mhada Colony, Pune - IITM",unclassified,48,1.06,0.618,2026-09-24T17:30:00+00:00
+11610,"Transport Nagar-Nigdi, Pune - IITM",ugm3,33,1.0,0.598,2026-09-24T06:00:00+00:00
+11611,"Malad West, Mumbai - IITM",unclassified,48,1.087,0.668,2026-09-24T17:30:00+00:00
+11613,"Revenue Colony-Shivajinagar, Pune - IITM",ugm3,48,1.0,0.575,2026-09-24T17:30:00+00:00
+12024,"Chakala-Andheri East, Mumbai - IITM",ppb,48,1.62,0.999,2026-09-24T17:30:00+00:00
+12039,"Khindipada-Bhandup West, Mumbai - IITM",ugm3,48,0.999,0.573,2026-09-24T17:30:00+00:00
+12040,"Mulund West, Mumbai - MPCB",ugm3,48,0.961,0.732,2026-09-24T17:30:00+00:00
+12046,"Perungudi, Chennai - TNPCB",unclassified,33,1.059,0.736,2026-09-24T17:30:00+00:00
+42240,"Pan Bazaar, Guwahati - APCB",unclassified,45,1.598,1.126,2026-09-24T17:15:00+00:00
+44513,"Kadri, Mangalore - KSPCB",ppb,48,1.373,0.998,2026-09-24T17:30:00+00:00
+44515,"Panchal Nagar, Gadag - KSPCB",ppb,48,1.529,1.0,2026-09-16T05:00:00+00:00
+45008,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",unclassified,34,0.803,0.456,2026-09-24T17:30:00+00:00
+60656,"Tamaka Ind. Area, Kolar - KSPCB",unclassified,0,,,2026-09-24T09:45:00+00:00
+60657,"Devaraj Urs Badavane, Davanagere - KSPCB",ppb,12,1.57,1.0,2026-09-24T17:30:00+00:00
+60658,"Hadapsar, Pune - IITM",ugm3,48,0.999,0.654,2026-09-24T17:30:00+00:00
+60659,"Jawahar Nagar, Puducherry - PPCC",ugm3,48,1.0,0.577,2026-09-24T17:30:00+00:00
+220265,"Rajbagh, Srinagar - JKSPCB",unclassified,45,0.868,0.525,2026-09-24T17:30:00+00:00
+220353,"Brahmagiri, Udupi - KSPCB",ppb,46,1.518,0.991,2026-09-24T17:30:00+00:00
+223146,"Naharlagun, Naharlagun - APSPCB",unclassified,48,0.847,0.545,2026-09-24T17:30:00+00:00
+227384,"Jhunsi, Prayagraj - UPPCB",ppb,48,1.609,1.0,2026-09-24T17:30:00+00:00
+227386,"B R Ambedkar University, Lucknow - UPPCB",ppb,48,1.607,1.0,2026-09-24T17:30:00+00:00
+227387,"Motilal Nehru NIT, Prayagraj - UPPCB",unclassified,48,0.916,0.515,2026-09-24T17:30:00+00:00
+227533,"Rakhial, Ahmedabad - IITM",ugm3,48,0.969,0.563,2026-09-24T17:15:00+00:00
+227534,"Gyaspur, Ahmedabad - IITM",ugm3,48,0.999,0.646,2026-09-24T17:30:00+00:00
+227535,"Manoharpur, Agra - UPPCB",unclassified,48,1.494,0.847,2026-09-24T17:30:00+00:00
+227536,"Chandkheda, Ahmedabad - IITM",ugm3,47,1.0,0.592,2026-09-24T17:30:00+00:00
+227931,"Sector-3B Avas Vikas Colony, Agra - UPPCB",unclassified,48,1.846,1.135,2026-09-24T17:30:00+00:00
+228297,"SVPI Airport Hansol, Ahmedabad - IITM",ugm3,29,1.0,0.593,2026-09-24T17:30:00+00:00
+228300,"SAC ISRO Satellite, Ahmedabad - IITM",unclassified,48,1.333,0.851,2026-09-24T17:30:00+00:00
+228301,"IIPHG Lekawada, Gandhinagar - IITM",ppb,48,1.63,0.999,2026-09-24T17:30:00+00:00
+228303,"SAC ISRO Bopal, Ahmedabad - IITM",ppb,48,1.465,1.032,2026-09-24T17:30:00+00:00
+228352,"Shastripuram, Agra - UPPCB",unclassified,48,1.735,1.153,2026-09-24T17:30:00+00:00
+228397,"IESD Banaras Hindu University, Varanasi - UPPCB",unclassified,48,1.787,1.365,2026-09-24T17:30:00+00:00
+228403,"Bhelupur, Varanasi - UPPCB",unclassified,48,1.792,1.105,2026-09-24T17:30:00+00:00
+228840,"Madan Mohan Malaviya University of Technology, Gorakhpur - UPPCB",ppb,48,1.674,1.019,2026-09-24T17:30:00+00:00
+229195,"Maldahiya, Varanasi - UPPCB",unclassified,46,1.79,1.343,2026-09-24T17:30:00+00:00
+229252,"NSI Kalyanpur, Kanpur - UPPCB",ppb,48,1.774,1.0,2026-09-24T17:30:00+00:00
+229404,"Kukrail Picnic Spot-1, Lucknow - UPPCB",ppb,46,1.555,1.0,2026-09-24T17:30:00+00:00
+229728,"Kamalnath Nagar, Bettiah - BSPCB",unclassified,0,,,2026-09-24T17:30:00+00:00
+229729,"Nagla Bhau, Firozabad - UPPCB",unclassified,42,1.781,1.077,2026-09-24T17:30:00+00:00
+229731,"Gandak Colony, Motihari - BSPCB",ugm3,48,0.999,0.638,2026-09-24T17:30:00+00:00
+229985,"D M Colony, Bihar Sharif - BSPCB",ugm3,32,1.0,0.601,2026-09-24T17:30:00+00:00
+229987,"MIT-Daudpur Kothi, Muzaffarpur - BSPCB",unclassified,0,,,2026-09-24T17:30:00+00:00
+233414,"Omex Eternity, Vrindavan - UPPCB",unclassified,48,1.683,0.947,2026-09-24T17:30:00+00:00
+233415,"Sector 22, Chandigarh - CPCC",ugm3,48,0.998,0.671,2026-09-24T17:30:00+00:00
+233416,"Nagar Nigam, Prayagraj - UPPCB",ppb,48,1.676,1.018,2026-09-24T17:30:00+00:00
+234568,"FTI Kidwai Nagar, Kanpur - UPPCB",ppb,48,1.81,1.019,2026-09-24T17:30:00+00:00
+234997,"Dharmapuri, Agra - UPPCB",ppb,48,1.52,1.0,2026-09-24T17:30:00+00:00
+236406,"Mangala, Bilaspur - CECB",ppb,48,1.633,0.995,2026-09-24T17:30:00+00:00
+270697,"Employment Office, Moradabad - UPPCB",ppb,46,1.653,0.995,2026-09-24T17:30:00+00:00
+270703,"Dada Peer, Sasaram - BSPCB",unclassified,6,,,2026-09-24T17:30:00+00:00
+270704,"Town Hall, Munger - BSPCB",ugm3,47,0.995,0.69,2026-09-24T17:30:00+00:00
+270708,"Civic Center, Bhilai - Bhilai Steel Plant",ppb,33,1.594,0.997,2026-09-24T16:15:00+00:00
+270720,"Mirchaibari, Katihar - BSPCB",unclassified,48,0.846,0.52,2026-09-24T17:30:00+00:00
+270721,"Mayaganj, Bhagalpur - BSPCB",ugm3,28,0.997,0.536,2026-09-24T15:15:00+00:00
+270723,"DM Office_Kachari Chowk, Bhagalpur - BSPCB",ugm3,44,0.999,0.544,2026-09-24T17:30:00+00:00
+270724,"Kareemganj, Gaya - BSPCB",unclassified,44,0.661,0.48,2026-09-24T17:30:00+00:00
+270725,"Mariam Nagar, Purnia - BSPCB",unclassified,44,0.305,0.216,2026-09-24T17:30:00+00:00
+270726,"Chitragupta Nagar, Siwan - BSPCB",ugm3,17,0.997,0.742,2026-09-24T17:30:00+00:00
+270727,"SDM Office_Khagra, Kishanganj - BSPCB",ugm3,48,0.999,0.617,2026-09-24T17:30:00+00:00
+270728,"Police Line, Saharsa - BSPCB",ugm3,47,0.999,0.619,2026-09-24T17:30:00+00:00
+270729,"Darshan Nagar, Chhapra - BSPCB",ugm3,40,0.998,0.786,2026-09-24T17:30:00+00:00
+270730,"Dangi Tola, Rajgir - BSPCB",unclassified,44,0.848,0.556,2026-09-24T17:30:00+00:00
+270737,"Forest Rest House, Manguraha - BSPCB",ugm3,28,0.971,0.595,2026-09-24T17:30:00+00:00
+270771,"Buddhi Vihar, Moradabad - UPPCB",ppb,48,1.66,0.998,2026-09-24T17:30:00+00:00
+270774,"New DM Office, Arrah - BSPCB",ugm3,48,0.999,0.622,2026-09-24T17:30:00+00:00
+270775,"Kharahiya Basti, Araria - BSPCB",unclassified,48,0.843,0.522,2026-09-24T17:30:00+00:00
+270777,"Jigar Colony, Moradabad - UPPCB",ppb,48,1.616,0.995,2026-09-24T17:30:00+00:00
+270877,"Eco Herbal Park, Moradabad - UPPCB",ugm3,46,0.999,0.565,2026-09-24T17:30:00+00:00
+278159,"Rohta, Agra - UPPCB",unclassified,48,1.282,0.849,2026-09-24T17:30:00+00:00
+278418,"Sector-53, Chandigarh - CPCC",ugm3,38,1.0,0.582,2026-09-24T17:30:00+00:00
+278671,"Shivaji Nagar, Jhansi - UPPCB",unclassified,48,1.455,1.061,2026-09-24T17:30:00+00:00
+301387,"Raikhad, Ahmedabad - IITM",ugm3,48,1.0,0.621,2026-09-24T17:30:00+00:00
+301388,"Sardar Patel Inter College, Baghpat - UPPCB",unclassified,48,0.591,0.356,2026-09-24T17:30:00+00:00
+301389,"HIMUDA Complex Phase-1, Baddi - HPPCB",ugm3,48,0.999,0.64,2026-09-24T17:30:00+00:00
+301390,"Bardowali, Agartala - Tripura SPCB",ppb,48,1.605,1.01,2026-09-24T17:30:00+00:00
+301391,"DM Office_Kasipur, Samastipur - BSPCB",ugm3,45,1.0,0.611,2026-09-24T11:15:00+00:00
+301670,"Collector Office, Yadgir - KSPCB",ugm3,41,0.993,0.645,2026-09-24T17:30:00+00:00
+304956,"Gurdeo Nagar, Aurangabad - BSPCB",unclassified,26,0.698,0.471,2026-09-04T08:15:00+00:00
+313411,"JN Stadium, Shillong - Meghalaya PCB",unclassified,0,,,2026-09-24T17:30:00+00:00
+317035,"Doon University, Dehradun - UKPCB",ppb,48,1.823,1.0,2026-09-24T17:30:00+00:00
+330021,"Vibhab Nagar, Firozabad - UPPCB",unclassified,48,1.871,1.121,2026-09-24T17:30:00+00:00
+344103,"ECIL Kapra, Hyderabad - TSPCB",ppb,42,1.57,1.001,2026-09-24T17:30:00+00:00
+344104,"Kompally Municipal Office, Hyderabad - TSPCB",ppb,48,1.584,0.999,2026-09-24T17:30:00+00:00
+344140,"Somajiguda, Hyderabad - TSPCB",ppb,38,1.555,0.999,2026-09-24T17:30:00+00:00
+344142,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",ppb,48,1.571,0.996,2026-09-24T17:30:00+00:00
+344144,"IITH Kandi, Hyderabad - TSPCB",ppb,40,1.595,1.001,2026-09-24T17:30:00+00:00
+346257,"Ramachandrapuram, Hyderabad - TSPCB",ppb,48,1.559,0.999,2026-09-24T17:30:00+00:00
+346258,"Kokapet, Hyderabad - TSPCB",ppb,46,1.593,1.002,2026-09-24T17:30:00+00:00
+346438,"Rajendra Nagar, Bareilly - UPPCB",unclassified,48,1.791,1.103,2026-09-24T17:30:00+00:00
+346439,"Kalindi Kunj, Khurja - UPPCB",unclassified,48,1.872,1.138,2026-09-24T17:30:00+00:00
+352465,"New Malakpet, Hyderabad - TSPCB",ppb,48,1.593,0.994,2026-09-24T17:30:00+00:00
+352777,"Kashiram Nagar, Moradabad - UPPCB",ppb,48,1.739,1.022,2026-09-24T17:30:00+00:00
+353715,"Transport Nagar, Moradabad - UPPCB",unclassified,48,1.781,1.094,2026-09-24T17:30:00+00:00
+358452,"Chalai Bazaar, Ramanathapuram - TNPCB",unclassified,0,,,2026-09-24T08:00:00+00:00
+358456,"Gulzarpet, Anantapur - APPCB",ugm3,44,0.982,0.596,2026-09-24T17:30:00+00:00
+358467,"Civil Lines, Bareilly - UPPCB",unclassified,48,1.736,1.052,2026-09-24T17:30:00+00:00
+358665,"Ramteerth Nagar, Belgaum - KSPCB",unclassified,4,,,2026-09-24T10:00:00+00:00
+361378,"Paryavaran Parisar, Bhopal - MPPCB",ugm3,48,1.0,0.556,2026-09-24T17:30:00+00:00
+363601,"Girls College, Sivasagar - PCBA",ugm3,48,1.0,0.613,2026-09-24T17:30:00+00:00
+3409317,"Chauhan Colony, Chandrapur - MPCB",ugm3,48,0.999,0.579,2026-09-24T17:30:00+00:00
+3409318,"Central School, Lucknow - CPCB",ugm3,48,1.019,0.649,2026-09-24T17:30:00+00:00
+3409320,"Rabindra Bharati University, Kolkata - WBPCB",ugm3,43,0.99,0.621,2026-09-24T17:30:00+00:00
+3409321,Haldia - WBSPCB,unclassified,42,1.105,0.742,2026-09-24T17:30:00+00:00
+3409322,"Pimpleshwar Mandir, Thane - MPCB",unclassified,29,0.2,0.136,2026-09-24T17:30:00+00:00
+3409323,"Worli, Mumbai - MPCB",ugm3,48,1.001,0.593,2026-09-24T17:30:00+00:00
+3409329,"Deonar, Mumbai - IITM",unclassified,48,1.172,0.65,2026-09-24T17:30:00+00:00
+3409336,"GIFT City, Gandhinagar - IITM",ppb,48,1.701,1.0,2026-09-24T17:30:00+00:00
+3409338,"DRCC Anandpur, Begusarai - BSPCB",ugm3,48,0.999,0.675,2026-09-24T17:30:00+00:00
+3409339,"Central Jail, Buxar - BSPCB",unclassified,33,0.779,0.515,2026-09-10T03:00:00+00:00
+3409340,"Zero Point GICI, Gangtok - SSPCB",unclassified,47,1.712,1.116,2026-09-24T17:30:00+00:00
+3409346,"Semmandalam, Cuddalore - TNPCB",unclassified,0,,,2026-09-19T09:15:00+00:00
+3409348,"Uchapatti, Madurai - TNPCB",unclassified,0,,,2026-09-24T06:00:00+00:00
+3409359,"Kalabhavan, Dharwad - KSPCB",ppb,45,1.554,1.0,2026-09-24T17:30:00+00:00
+3409360,"IITG, Guwahati - PCBA",unclassified,48,1.246,0.94,2026-09-24T17:30:00+00:00
+3409361,"AIIMS, Raipur - CECB",unclassified,48,1.083,0.781,2026-09-24T17:30:00+00:00
+3409362,"Siltara Phase-II, Raipur - CECB",unclassified,47,0.186,0.126,2026-09-24T15:00:00+00:00
+3409363,"Krishak Nagar, Raipur - CECB",ugm3,40,0.984,0.703,2026-09-24T17:30:00+00:00
+3409366,"Urja Nagar, Korba - CECB",unclassified,31,0.867,0.651,2026-09-24T17:30:00+00:00
+3409367,"Hathkhoj, Bhilai - CECB",ugm3,48,1.006,0.591,2026-09-24T17:30:00+00:00
+3409368,"32Bungalows, Bhilai - CECB",ugm3,48,0.976,0.557,2026-09-24T17:30:00+00:00
+3409369,"Maharaj Bada, Gwalior - MPPCB",ugm3,48,0.964,0.585,2026-09-24T17:30:00+00:00
+3409370,"Civil Lines, Sagar - MPPCB",ugm3,38,1.002,0.571,2026-09-24T14:00:00+00:00
+3409371,"Science Center, Surat - SMC",ugm3,48,1.008,0.749,2026-09-24T17:30:00+00:00
+3409372,"Gangineni Cheruvu, Chittoor - APPCB",ugm3,48,0.992,0.614,2026-09-24T17:30:00+00:00
+3409373,"Vaikuntapuram, Tirupathi - APPCB",unclassified,44,1.358,0.79,2026-09-24T17:30:00+00:00
+3409374,"Deen Dayal Nagar, Gwalior - MPPCB",ugm3,41,1.0,0.586,2026-09-24T17:30:00+00:00
+3409375,"Bata Chowk, Nalbari - PCBA",ugm3,48,1.0,0.647,2026-09-24T17:30:00+00:00
+3409376,"Central Academy for SFS, Byrnihat - PCBA",unclassified,48,0.559,0.397,2026-09-24T17:30:00+00:00
+3409377,"Meher Colony, Baripada - OSPCB",ppb,36,1.295,0.977,2026-09-24T17:30:00+00:00
+3409378,"Jagamohanpur, Keonjhar - OSPCB",unclassified,48,1.285,0.807,2026-09-24T17:30:00+00:00
+3409379,"Divisional Forest Office, Rairangpur - OSPCB",ppb,48,1.454,1.0,2026-09-24T17:30:00+00:00
+3409380,"Tata Township, Bileipada - OSPCB",unclassified,48,1.502,0.931,2026-09-24T17:30:00+00:00
+3409381,"Dabuna, Nayagarh - OSPCB",unclassified,48,2.45,1.557,2026-09-24T17:30:00+00:00
+3409382,"Raghunathpali, Rourkela - OSPCB",unclassified,40,1.494,0.911,2026-09-24T17:30:00+00:00
+3409383,"OMC Colony, Suakati - OSPCB",unclassified,48,1.385,0.846,2026-09-24T17:00:00+00:00
+3409384,"Barsua Iron Ore Mines, Tensa - OSPCB",unclassified,0,,,2026-09-24T17:30:00+00:00
+3409386,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",unclassified,46,1.773,1.087,2026-09-24T17:30:00+00:00
+3409387,"Lingaraj Nagar, Hubballi - KSPCB",ppb,39,1.556,1.001,2026-09-24T17:30:00+00:00
+3409388,"Kasturi Nagar, Bengaluru - KSPCB",unclassified,0,,,2026-09-19T10:00:00+00:00
+3409389,"Thimmalapura, Tumakuru - KSPCB",unclassified,48,1.351,0.838,2026-09-24T08:15:00+00:00
+3409390,"LGBI Airport, Guwahati - PCBA",unclassified,47,0.756,0.54,2026-09-24T17:30:00+00:00
+3409391,"Tarapur, Silchar - PCBA",unclassified,48,0.906,0.498,2026-09-24T17:30:00+00:00
+3409393,"Shivapura_Peenya, Bengaluru - KSPCB",unclassified,44,1.503,0.859,2026-09-18T05:30:00+00:00
+3409394,"Fertilizer Township, Rourkela - OSPCB",unclassified,0,,,2026-09-24T17:30:00+00:00
+3409395,"Sector-2, Rourkela - OSPCB",unclassified,48,0.597,0.37,2026-09-24T17:30:00+00:00
+3409396,"Nawapara SECL Colony, Chhal - CECB",unclassified,48,1.155,0.733,2026-09-24T17:30:00+00:00
+3409397,"OP Jindal School, Kunjemura - CECB",ppb,48,1.667,1.015,2026-09-24T17:30:00+00:00
+3409398,"Govt. Higher Secondary School, Milupara - CECB",unclassified,21,1.165,0.73,2026-09-24T14:30:00+00:00
+3409399,"OP Jindal Industrial Park, Tumidih - CECB",unclassified,46,1.253,0.739,2026-09-23T12:15:00+00:00
+3409400,"Yerramukkapalli, Kadapa - APPCB",unclassified,46,0.936,0.586,2026-09-24T17:30:00+00:00
+3409401,"Samrat Ashok Udhyan, Jodhpur - RSPCB",ugm3,48,1.001,0.55,2026-09-24T17:30:00+00:00
+3409402,"Krishna Nagar, Bharatpur - RSPCB",ugm3,48,1.0,0.578,2026-09-24T17:30:00+00:00
+3409403,"MM Ground, Bikaner - RSPCB",ugm3,48,1.001,0.561,2026-09-24T16:30:00+00:00
+3409404,"Subash Chowk, Churu - RSPCB",ugm3,48,1.0,0.598,2026-09-24T17:30:00+00:00
+3409405,"Raja Ganj, Dholpur - RSPCB",ugm3,43,0.999,0.668,2026-09-24T17:30:00+00:00
+3409406,"Nayapura, Kota - RSPCB",ugm3,48,1.001,0.581,2026-09-24T17:30:00+00:00
+3409407,"Shastri Nagar, Tonk - RSPCB",ugm3,48,1.001,0.56,2026-09-24T17:30:00+00:00
+3409408,"Shivaji Nagar, Rishikesh - UKPCB",ugm3,48,0.993,0.616,2026-09-24T17:30:00+00:00
+3409410,"Vedhaynath Colony, Sirohi - RSPCB",ugm3,48,1.0,0.566,2026-09-24T17:30:00+00:00
+3409411,"Christianpatty, Nagaon - PCBA",unclassified,48,1.76,1.293,2026-09-24T17:30:00+00:00
+3409412,"Dhanmandi, Kota - RSPCB",ugm3,48,1.0,0.571,2026-09-24T17:30:00+00:00
+3409413,"Idgah Hills, Bhopal - MPPCB",ugm3,48,1.0,0.58,2026-09-24T17:30:00+00:00
+3409416,"Rati Talai, Banswara - RSPCB",ugm3,48,1.0,0.603,2026-09-24T17:30:00+00:00
+3409417,"Shastri Nagar, Chittorgarh - RSPCB",ugm3,48,0.999,0.573,2026-09-24T17:30:00+00:00
+3409418,"Khatikan Mohalla, Dausa - RSPCB",ugm3,48,1.0,0.571,2026-09-24T17:30:00+00:00
+3409419,"Railway Colony, Barmer - RSPCB",ugm3,48,1.0,0.553,2026-09-24T17:30:00+00:00
+3409420,"Housing Board, Hanumangarh - RSPCB",ugm3,48,0.999,0.638,2026-09-24T17:30:00+00:00
+3409421,"Sahu Nagar, Sawai Madhopur - RSPCB",ugm3,48,0.999,0.582,2026-09-24T17:30:00+00:00
+3409422,"Indra Nagar, Jhunjhunu - RSPCB",ugm3,48,1.001,0.567,2026-09-24T17:30:00+00:00
+3409423,"Dhoinda, Rajsamand - RSPCB",ugm3,47,0.999,0.56,2026-09-24T17:30:00+00:00
+3409424,"Old City, Sri Ganganagar - RSPCB",ugm3,48,1.0,0.595,2026-09-24T17:30:00+00:00
+3409425,"Jhalamand, Jodhpur - RSPCB",ugm3,48,1.0,0.554,2026-09-24T17:30:00+00:00
+3409426,"Pragati Nagar, Pratapgarh - RSPCB",ugm3,48,1.001,0.579,2026-09-24T17:30:00+00:00
+3409427,"Radhakishan Pura, Sikar - RSPCB",ugm3,48,1.0,0.607,2026-09-24T17:30:00+00:00
+3409428,"Satyawati Vihar, Karauli - RSPCB",ugm3,46,1.001,0.566,2026-09-24T17:30:00+00:00
+3409429,"Rajlaxmi Nagar, Jhalawar - RSPCB",ugm3,48,1.0,0.625,2026-09-24T17:30:00+00:00
+3409430,"Mansarovar Sector-12, Jaipur - RSPCB",unclassified,46,0.939,0.525,2026-09-24T17:30:00+00:00
+3409431,"Digari Kalan, Jodhpur - RSPCB",ugm3,48,1.0,0.592,2026-09-24T17:30:00+00:00
+3409432,"Sector-2 Murlipura, Jaipur - RSPCB",ugm3,47,1.0,0.541,2026-09-24T17:30:00+00:00
+3409433,"RIICO Sitapura, Jaipur - RSPCB",ugm3,48,1.001,0.559,2026-09-24T10:30:00+00:00
+3409435,"Gavalinagar, Pimpri Chinchwad - MPCB",ugm3,44,0.983,0.533,2026-09-24T17:30:00+00:00
+3409436,"Park Street Wakad, Pimpri Chinchwad - MPCB",ugm3,42,0.984,0.569,2026-09-24T17:30:00+00:00
+3409439,"Savitribai Phule Pune University, Pune - MPCB",unclassified,48,1.138,0.739,2026-09-24T11:15:00+00:00
+3409440,"Shivaji University, Kolhapur - MPCB",ugm3,47,0.975,0.578,2026-09-24T17:30:00+00:00
+3409441,"Sinchan Bhavan, Kolhapur - MPCB",ugm3,29,0.983,0.61,2026-09-24T17:30:00+00:00
+3409442,"Pratap Nagar, Bhilwara - RSPCB",ugm3,46,1.0,0.611,2026-09-24T17:15:00+00:00
+3409443,"New Colony, Bundi - RSPCB",ugm3,48,1.001,0.559,2026-09-24T17:30:00+00:00
+3409444,"Sadar Bazar, Jaisalmer - RSPCB",ugm3,48,1.001,0.539,2026-09-24T17:30:00+00:00
+3409445,"Mandor, Jodhpur - RSPCB",ugm3,48,1.0,0.566,2026-09-24T17:30:00+00:00
+3409446,"Vijay Nagar, Sangli - MPCB",unclassified,47,1.335,0.786,2026-09-24T17:30:00+00:00
+3409447,"Bamboliya, Baran - RSPCB",ugm3,48,1.0,0.62,2026-09-24T17:30:00+00:00
+3409448,"Ratandeep Housing Society, Solapur - MPCB",ugm3,40,0.983,0.56,2026-09-24T17:30:00+00:00
+3409449,"Dnyaneshwar Nagar, Solapur - MPCB",ugm3,39,0.983,0.548,2026-09-24T17:30:00+00:00
+3409450,"Karni Colony, Nagaur - RSPCB",ugm3,48,1.0,0.548,2026-09-24T17:30:00+00:00
+3409451,"Pandav Nagari, Nashik - MPCB",unclassified,34,1.92,1.167,2026-09-24T17:30:00+00:00
+3409452,"Sawe Wadi, Latur - MPCB",ugm3,35,0.983,0.535,2026-09-24T17:30:00+00:00
+3409453,"MIDC Ambad, Nashik - MPCB",ppb,48,1.655,1.004,2026-09-24T17:30:00+00:00
+3409454,"Hirawadi, Nashik - MPCB",unclassified,32,1.302,0.916,2026-09-24T17:30:00+00:00
+3409455,"Kamble Tarf Birwadi, Mahad - MPCB",ppb,42,1.755,0.989,2026-09-24T17:30:00+00:00
+3409456,"Ramdaspeth, Akola - MPCB",unclassified,46,0.701,0.436,2026-09-24T17:30:00+00:00
+3409457,"Tarakpur, Ahmednagar - MPCB",ugm3,34,0.959,0.537,2026-09-24T17:30:00+00:00
+3409458,"Shivneri Colony, Amravati - MPCB",unclassified,48,1.443,0.873,2026-09-24T17:30:00+00:00
+3409459,"Shri Shivaji Science College, Amaravati - MPCB",unclassified,48,1.375,0.765,2026-09-24T17:30:00+00:00
+3409460,"MIDC Chilkalthana, Aurangabad - MPCB",unclassified,36,0.705,0.521,2026-09-24T17:30:00+00:00
+3409461,"Rachnakar Colony, Aurangabad - MPCB",ugm3,48,0.969,0.525,2026-09-24T17:30:00+00:00
+3409462,"Prabhat Colony, Jalgaon - MPCB",unclassified,45,1.441,0.909,2026-09-24T17:30:00+00:00
+3409464,"Ambazari, Nagpur - MPCB",unclassified,48,0.759,0.473,2026-09-24T17:30:00+00:00
+3409465,"Ram Nagar, Nagpur - MPCB",ugm3,44,0.983,0.542,2026-09-24T17:30:00+00:00
+3409466,"Masoom Colony, Parbhani - MPCB",ugm3,48,1.03,0.601,2026-09-24T17:30:00+00:00
+3409467,"Sneh Nagar, Nanded - MPCB",unclassified,41,0.762,0.444,2026-09-24T17:30:00+00:00
+3409468,"Mahal, Nagpur - MPCB",unclassified,42,0.948,0.552,2026-09-24T17:30:00+00:00
+3409469,"Kasarvadavali, Thane - MPCB",ugm3,48,0.982,0.553,2026-09-24T17:30:00+00:00
+3409470,"Katrap, Badlapur - MPCB",unclassified,38,1.245,0.787,2026-09-24T17:30:00+00:00
+3409471,"Sector-2E Kalamboli, Navi Mumbai - MPCB",unclassified,48,0.9,0.587,2026-09-24T17:30:00+00:00
+3409472,"Upvan Fort, Thane - MPCB",ugm3,47,0.983,0.54,2026-09-24T17:30:00+00:00
+3409473,"Deopur, Dhule - MPCB",ugm3,44,0.983,0.553,2026-09-18T08:45:00+00:00
+3409474,"Mahesh Nagar, Malegaon - MPCB",unclassified,46,2.088,1.186,2026-09-24T17:30:00+00:00
+3409475,"Tondare-Taloja, Navi Mumbai - MPCB",unclassified,48,0.931,0.631,2026-09-24T17:30:00+00:00
+3409476,"CBD Belapur, Belapur - MPCB",ugm3,48,0.984,0.583,2026-09-24T17:30:00+00:00
+3409477,"Kopripada-Vashi, Navi Mumbai - MPCB",unclassified,48,1.819,1.068,2026-09-24T17:30:00+00:00
+3409478,"Bhayandar West, Mira-Bhayandar - MPCB",unclassified,48,0.777,0.434,2026-09-24T17:30:00+00:00
+3409479,"Mindspace-Malad West, Mumbai - MPCB",unclassified,38,1.136,0.639,2026-09-24T17:30:00+00:00
+3409480,"Bolinj, Virar - MPCB",ugm3,43,0.978,0.72,2026-09-24T17:30:00+00:00
+3409481,"Khaira, Boisar - MPCB",unclassified,48,2.593,1.462,2026-09-24T17:30:00+00:00
+3409482,"Bandra Kurla Complex, Mumbai - MPCB",unclassified,44,1.388,0.881,2026-09-24T17:30:00+00:00
+3409483,"Chembur, Mumbai - MPCB",ugm3,48,1.044,0.646,2026-09-24T17:30:00+00:00
+3409484,"Sidhi Vinayak Nagar, Ulhasnagar - MPCB",unclassified,48,0.915,0.569,2026-09-24T17:30:00+00:00
+3409485,"Gokul Nagar, Bhiwandi - MPCB",ppb,48,1.652,1.025,2026-09-24T17:30:00+00:00
+3409486,"Kherwadi_Bandra East, Mumbai - MPCB",ppb,48,1.624,1.043,2026-09-24T17:30:00+00:00
+3409488,"Suhagi, Jabalpur - JMC",ugm3,47,1.0,0.592,2026-09-24T17:30:00+00:00
+3409489,"Gupteshwar, Jabalpur - JMC",ugm3,33,0.999,0.62,2026-09-24T17:30:00+00:00
+3409492,"HB Colony, Vijayawada - APPCB",ugm3,42,0.966,0.579,2026-09-24T17:30:00+00:00
+3409493,"Rajiv Gandhi Park, Vijayawada - APPCB",ugm3,37,0.993,0.597,2026-09-24T17:30:00+00:00
+3409494,"Bhoiwada, Dungarpur - RSPCB",ugm3,48,0.999,0.571,2026-09-24T17:30:00+00:00
+3409495,"Mudtra Sili, Jalore - RSPCB",ugm3,46,1.002,0.569,2026-09-24T17:30:00+00:00
+3409497,"KHB Colony, Karwar - KSPCB",ppb,48,1.557,1.0,2026-09-12T21:30:00+00:00
+3409498,"Residency Area, Indore - IMC",unclassified,44,0.806,0.592,2026-09-24T17:30:00+00:00
+3409499,"Regional Park, Indore - MPPCB",unclassified,14,0.896,0.669,2026-09-24T17:30:00+00:00
+3409501,"Airport Area, Indore - IMC",unclassified,48,0.24,0.152,2026-09-24T17:30:00+00:00
+3409503,"Forest Office, Barbil - OSPCB",ugm3,33,0.999,0.535,2026-09-24T16:30:00+00:00
+3409504,"Hakimapada, Angul - OSPCB",ugm3,47,1.0,0.603,2026-09-24T17:30:00+00:00
+3409505,"Lingraj Mandir, Bhubaneswar - OSPCB",ugm3,47,0.999,0.635,2026-09-24T17:30:00+00:00
+3409506,"CDA Area, Cuttack - OSPCB",ugm3,48,1.0,0.577,2026-09-24T17:30:00+00:00
+3409507,"Ferro Chrome Colony, Byasanagar - OSPCB",ugm3,48,1.001,0.599,2026-09-24T17:30:00+00:00
+3409508,"Patia, Bhubaneswar - OSPCB",ugm3,48,1.001,0.664,2026-09-24T17:30:00+00:00
+3409509,"SVSPA Campus, Barrackpore - WBPCB",ugm3,48,0.999,0.74,2026-09-24T17:30:00+00:00
+3409510,"Byculla, Mumbai - BMC",unclassified,8,,,2026-09-24T17:30:00+00:00
+3409511,"Shivaji Nagar, Mumbai - BMC",unclassified,39,1.251,0.736,2026-09-24T17:30:00+00:00
+3409512,"Kandivali West, Mumbai - BMC",ugm3,48,0.984,0.552,2026-09-24T17:30:00+00:00
+3409513,"Sewri, Mumbai - BMC",ugm3,13,0.984,0.528,2026-09-24T17:30:00+00:00
+3409514,"Ghatkopar, Mumbai - BMC",ppb,48,1.623,1.003,2026-09-24T17:30:00+00:00
+3409515,"Govindh Bhavan Colony, Jabalpur - MPPCB",ugm3,48,1.0,0.624,2026-09-24T17:30:00+00:00
+3409518,"Rajiv Nagar, Vijayawada - APPCB",ugm3,48,0.976,0.591,2026-09-24T16:00:00+00:00
+3409519,"Vasundhara Nagar_UIT, Bhiwadi - RSPCB",ugm3,48,1.0,0.57,2026-09-24T17:30:00+00:00
+3409520,"PCBL Residential Complex, Durgapur - WBPCB",ugm3,36,0.998,0.743,2026-09-24T17:30:00+00:00
+3409521,"Evelyn Lodge, Asansol - WBPCB",ugm3,48,0.999,0.682,2026-09-24T17:30:00+00:00
+3409522,"Mahabir Colliery, Asansol - WBPCB",ugm3,48,0.999,0.706,2026-09-24T16:30:00+00:00
+3409523,"Bhumkar Nagar, Pune - IITM",ugm3,48,0.989,0.592,2026-09-24T17:30:00+00:00
+3409525,"Trivenidevi Bhalotia College, Asansol - WBPCB",ugm3,45,0.999,0.633,2026-09-24T17:30:00+00:00
+3409526,"Panchawati_Pashan, Pune - IITM",ugm3,48,1.0,0.584,2026-09-24T17:30:00+00:00
+3409527,"SIPCOT Industrial Park, Perundurai - TNPCB",ppb,22,1.241,0.991,2026-09-18T05:15:00+00:00
+3409528,"Savta Mali Nagar, Pimpri-Chinchwad - IITM",unclassified,48,0.149,0.098,2026-09-24T17:30:00+00:00
+3410004,"Amity University, Panchgaon - IITM",ugm3,48,1.001,0.561,2026-09-24T17:30:00+00:00
+3410005,"Dhankawadi, Pune - IITM",ugm3,48,0.997,0.598,2026-09-24T17:30:00+00:00

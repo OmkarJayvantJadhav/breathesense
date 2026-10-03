@@ -1,0 +1,126 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "93cd82cd-0702-457d-9bc0-85acbcdaf749",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 825.57041234425458,
+            "y": 12.889066358244378
+          },
+          "nodeIndex": "vw_active_alerts",
+          "nodeLineageTag": "59bafe91-4c13-47d9-bf5b-44ca9909d0a2",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 406.07318952384992,
+            "y": 25.778132716488784
+          },
+          "nodeIndex": "vw_city_daily_all",
+          "nodeLineageTag": "a79fc241-e399-442f-9504-aae49bfd5f18",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2923.056526446278,
+            "y": 14.889066358244378
+          },
+          "nodeIndex": "vw_city_latest",
+          "nodeLineageTag": "318dbd56-c308-4def-8726-e6c328ee60b3",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1245.0676351646594,
+            "y": 12.889066358244378
+          },
+          "nodeIndex": "vw_data_quality",
+          "nodeLineageTag": "fd9a4389-4439-45ce-b02e-5d1246d6fc95",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1664.564857985064,
+            "y": 12.889066358244378
+          },
+          "nodeIndex": "vw_last_24h",
+          "nodeLineageTag": "c05865b7-b153-4679-ab9a-d7a23c815138",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2084.0620808054687,
+            "y": 12.889066358244378
+          },
+          "nodeIndex": "vw_location_aqi_now",
+          "nodeLineageTag": "b2365691-f2f0-402e-8915-1b2e7b2ca20f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2503.5593036258733,
+            "y": 12.889066358244378
+          },
+          "nodeIndex": "vw_pipeline_health",
+          "nodeLineageTag": "effe2658-80ea-4552-9c0e-f4dc0c64e49b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

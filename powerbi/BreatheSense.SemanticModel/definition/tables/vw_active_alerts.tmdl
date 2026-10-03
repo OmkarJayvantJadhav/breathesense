@@ -1,0 +1,85 @@
+table vw_active_alerts
+	lineageTag: 59bafe91-4c13-47d9-bf5b-44ca9909d0a2
+
+	measure 'Stations in Alert' = COALESCE ( COUNTROWS ( vw_active_alerts ), 0 )
+		formatString: 0
+		lineageTag: 51150579-2934-44a6-aa5a-1980d1c3ce11
+
+	measure 'Active Alerts Note' = IF ( ISEMPTY ( vw_active_alerts ), "No active alerts - no fresh station is at or above the alert threshold", "Fresh stations at or above the alert threshold" )
+		lineageTag: 83cefcaf-87ae-4f8d-bb0e-458cc3becdce
+
+	measure 'Active Alerts Note Color' = IF ( ISEMPTY ( vw_active_alerts ), "#B4532A", "#6B7785" )
+		lineageTag: 38ffe30a-b0f2-44dd-8d33-c53a68435739
+
+	column 'Location ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: ad534a77-9d7c-44af-ac45-40379b816926
+		summarizeBy: none
+		sourceColumn: Location ID
+
+	column Station
+		dataType: string
+		lineageTag: 13c9365e-4458-4521-91c9-35f47f91dcf3
+		summarizeBy: none
+		sourceColumn: Station
+
+	column City
+		dataType: string
+		lineageTag: aedd8420-f5f6-4918-b426-b481eeb02587
+		summarizeBy: none
+		sourceColumn: City
+
+	column State
+		dataType: string
+		lineageTag: 4aacccf5-958e-4c42-95d3-30d87b89c2b9
+		summarizeBy: none
+		sourceColumn: State
+
+	column 'BreatheSense AQI'
+		dataType: int64
+		formatString: 0
+		lineageTag: e0ac0d72-f51a-42ce-8e05-0a78c34113de
+		summarizeBy: sum
+		sourceColumn: BreatheSense AQI
+
+	column 'AQI Category'
+		dataType: string
+		lineageTag: f8fdb3f9-4abf-4fd7-bfca-7e888ce9aad1
+		summarizeBy: none
+		sourceColumn: AQI Category
+
+	column 'Dominant Pollutant'
+		dataType: string
+		lineageTag: e7634aab-5276-4a33-abed-e7f5d9085fc1
+		summarizeBy: none
+		sourceColumn: Dominant Pollutant
+
+	column 'Last Observed (IST)'
+		dataType: dateTime
+		formatString: dd mmm yyyy hh:nn
+		lineageTag: 489d4fd5-d820-46da-83ca-5f02c5360b16
+		summarizeBy: none
+		sourceColumn: Last Observed (IST)
+
+	column last_observed_utc
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d1a55716-ddf8-4e78-a0bc-56695c61facc
+		summarizeBy: none
+		sourceColumn: last_observed_utc
+
+	partition vw_active_alerts = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-dark-moon-b3ti6gml.c-4.ap-southeast-1.aws.neon.tech:5432", "neondb"),
+				    View = Source{[Schema="public",Item="vw_active_alerts"]}[Data],
+				    Typed = Table.TransformColumnTypes(View, {{"Location ID", Int64.Type}, {"Station", type text}, {"City", type text}, {"State", type text}, {"BreatheSense AQI", Int64.Type}, {"AQI Category", type text}, {"Dominant Pollutant", type text}, {"Last Observed (IST)", type datetime}, {"last_observed_utc", type datetimezone}})
+				in
+				    Typed
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

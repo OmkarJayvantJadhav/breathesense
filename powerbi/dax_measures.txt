@@ -1,0 +1,140 @@
+// BreatheSense: Power BI DAX measures. Paste each block into a measure.
+//
+// CONNECTION: PostgreSQL connector -> Neon (SSL on). Load the 7 views from sql/02_views.sql:
+//   vw_location_aqi_now, vw_city_latest, vw_last_24h, vw_active_alerts,
+//   vw_city_daily_all, vw_data_quality, vw_pipeline_health
+// Import mode for vw_city_daily_all (history). DirectQuery only for the live views, with automatic
+// page refresh no more often than every 30 min (protects Neon's compute allowance).
+// Never put the Neon password in this file: enter it in Power BI's connection dialog.
+//
+// CALENDAR TABLE (Modeling > New table), then relate Calendar[Date] -> vw_city_daily_all[Date]
+// (many-to-one, single) and mark Calendar as a date table:
+//   Calendar = CALENDAR(DATE(2018, 1, 1), TODAY())
+//
+// PAGE -> VIEW MAP (every page answers one question)
+//   1 Overview             what is the air like now and is the data fresh?
+//                          vw_city_latest, vw_location_aqi_now, vw_active_alerts, vw_pipeline_health
+//   2 Live Stations        which stations are worst right now?   vw_location_aqi_now (map, filters)
+//   3 Historical Trends    how has PM2.5 / PM10 / AQI changed?   vw_city_daily_all + Calendar
+//   4 Pollutant Deep Dive  what drives AQI, and when?            vw_city_daily_all, vw_last_24h
+//   5 Data Quality         can I trust the data?                 vw_data_quality, vw_pipeline_health
+//
+// LABELS: city numbers are an "analytical rollup of station AQIs", never an official CPCB city AQI.
+// Backfilled days (Source = "backfill") have no hourly metrics: Max Hourly PM2.5 and Hours Poor or
+// Worse are blank for them, and O3/CO use the daily mean (flag: O3/CO Daily-Mean Approximation).
+
+// ---------------------------------------------------------------- AQI measures
+Current Station AQI =
+    IF (
+        HASONEVALUE ( vw_location_aqi_now[Station] ),
+        MAX ( vw_location_aqi_now[BreatheSense AQI] ),
+        BLANK ()
+    )
+
+Median Station AQI =
+    MEDIAN ( vw_location_aqi_now[BreatheSense AQI] )
+
+Max Station AQI =
+    MAX ( vw_location_aqi_now[BreatheSense AQI] )
+
+Avg AQI 24h =
+    // mean of station AQIs, each already based on its trailing 24 h / 8 h windows
+    AVERAGE ( vw_location_aqi_now[BreatheSense AQI] )
+
+Reporting Stations (fresh) =
+    // fresh stations with a valid AQI, summed over the city rollup; 0 when none are fresh
+    COALESCE ( SUM ( vw_city_latest[Reporting Stations] ), 0 )
+
+Cities Monitored =
+    // cities with at least one fresh station; 0 when none are fresh
+    COALESCE ( DISTINCTCOUNT ( vw_city_latest[City] ), 0 )
+
+Stations in Alert =
+    COALESCE ( COUNTROWS ( vw_active_alerts ), 0 )
+
+AQI Category Color =
+    // conditional-format helper; use on the median or on a single station
+    VAR v = [Median Station AQI]
+    RETURN
+        SWITCH (
+            TRUE (),
+            ISBLANK ( v ), "#BFBFBF",
+            v <= 50, "#00B050",
+            v <= 100, "#92D050",
+            v <= 200, "#FFFF00",
+            v <= 300, "#FF9900",
+            v <= 400, "#FF0000",
+            "#C00000"
+        )
+
+// ---------------------------------------------------------------- trend measures
+PM2.5 7D Rolling Avg =
+    VAR d = MAX ( 'Calendar'[Date] )
+    RETURN
+        CALCULATE (
+            AVERAGE ( vw_city_daily_all[Avg PM2.5] ),
+            DATESBETWEEN ( 'Calendar'[Date], d - 6, d )
+        )
+
+PM2.5 30D Rolling Avg =
+    VAR d = MAX ( 'Calendar'[Date] )
+    RETURN
+        CALCULATE (
+            AVERAGE ( vw_city_daily_all[Avg PM2.5] ),
+            DATESBETWEEN ( 'Calendar'[Date], d - 29, d )
+        )
+
+PM2.5 MoM % =
+    // blank when the previous month has no data (there is no CPCB history in 2023-2024)
+    VAR cur = AVERAGE ( vw_city_daily_all[Avg PM2.5] )
+    VAR prev = CALCULATE ( AVERAGE ( vw_city_daily_all[Avg PM2.5] ), DATEADD ( 'Calendar'[Date], -1, MONTH ) )
+    RETURN
+        DIVIDE ( cur - prev, prev )
+
+Poor-or-Worse Hours % =
+    // live days only: Hours Poor or Worse is blank for backfilled days
+    VAR hrs = SUM ( vw_city_daily_all[Hours Poor or Worse] )
+    VAR days = CALCULATE ( COUNTROWS ( vw_city_daily_all ), NOT ISBLANK ( vw_city_daily_all[Hours Poor or Worse] ) )
+    RETURN
+        DIVIDE ( hrs, days * 24 )
+
+Poor-or-Worse Days % =
+    // works for live and backfilled days: median station AQI >= 201
+    DIVIDE (
+        CALCULATE ( COUNTROWS ( vw_city_daily_all ), vw_city_daily_all[Median Station AQI] >= 201 ),
+        CALCULATE ( COUNTROWS ( vw_city_daily_all ), NOT ISBLANK ( vw_city_daily_all[Median Station AQI] ) )
+    )
+
+// ---------------------------------------------------------------- data-quality measures
+Fresh Stations =
+    // 0 instead of blank when no station matches (same pattern as Stations in Alert)
+    COALESCE ( CALCULATE ( COUNTROWS ( vw_data_quality ), vw_data_quality[Is Fresh] = TRUE () ), 0 )
+
+Stale Stations =
+    // 0 instead of blank when no station matches (same pattern as Stations in Alert)
+    COALESCE ( CALCULATE ( COUNTROWS ( vw_data_quality ), vw_data_quality[Is Fresh] = FALSE () ), 0 )
+
+Minutes Since Last Update =
+    MAX ( vw_pipeline_health[Minutes Since Last Load] )
+
+Data Completeness % =
+    // average share of the last 24 hours with data, across the selected stations
+    DIVIDE ( AVERAGE ( vw_data_quality[Completeness % (24h)] ), 100 )
+
+// ---------------------------------------------------------------- empty-state notes
+// Used as dynamic subtitles (text and colour) so an empty chart says why it is empty.
+Peak Hours Note =
+    IF ( ISEMPTY ( vw_last_24h ),
+        "No readings in the last 24 hours - the upstream feed is behind (see Data Quality)",
+        "Mean of city hourly averages · markers are actual hours, no smoothing" )
+
+Peak Hours Note Color =
+    IF ( ISEMPTY ( vw_last_24h ), "#B4532A", "#6B7785" )
+
+Active Alerts Note =
+    IF ( ISEMPTY ( vw_active_alerts ),
+        "No active alerts - no fresh station is at or above the alert threshold",
+        "Fresh stations at or above the alert threshold" )
+
+Active Alerts Note Color =
+    IF ( ISEMPTY ( vw_active_alerts ), "#B4532A", "#6B7785" )

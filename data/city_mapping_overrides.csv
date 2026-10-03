@@ -1,0 +1,29 @@
+location_id,city,state,note
+2459,Hyderabad,,Name "US Diplomatic Post: Hyderabad"; state from city lookup
+2460,Kolkata,,Name "US Diplomatic Post: Kolkata"; state from city lookup
+8172,Kolkata,,Name "US Diplomatic Post: Kolkata"; state from city lookup
+2461,Chennai,,Name "US Diplomatic Post: Chennai"; state from city lookup
+2597,Delhi,,Name "US Diplomatic Post: New Delhi"; state from city lookup
+8118,Delhi,,Name "New Delhi"; state from city lookup
+8039,Mumbai,,Name "Mumbai"; state from city lookup
+8558,Chennai,,Name "Chennai"; state from city lookup
+8557,Hyderabad,,Name "Hyderabad"; state from city lookup
+703,Jodhpur,,Name "Collectorate Jodhpur - RSPCB"; state from city lookup
+2345,Jaipur,,Name "VK Industrial Area Jaipur - RSPCB"; state from city lookup
+910,Kolkata,,"Name "Victoria Memorial - WBSPCB"; coordinates 1.3 km from agency-confirmed Kolkata station"
+3409321,Haldia,,Name "Haldia - WBSPCB"; state from city lookup
+12,Kanpur,,Name "SPARTAN - IIT Kanpur"; state from city lookup
+1285345,Kanpur,,Name "SPARTAN - IIT Kanpur"; state from city lookup
+2585,Pune,,Name "AAQMS Karve Road Pune"; state from city lookup
+2598,Navi Mumbai,,Name "Navi Mumbai Municipal Corporation Airoli"; state from city lookup
+6442,Rupnagar,Punjab,"Agency is a company; coordinates 31.03N 76.56E in Punjab near HP border (nearest confirmed: Baddi HP 25 km)"
+10695,Rupnagar,Punjab,"Same name as 6442; OpenAQ latitude 30.03 looks like a typo of 31.03 (twin 6442); name is reliable"
+6933,Ratlam,Madhya Pradesh,"Agency is a company; 23.33N 75.05E in MP near Rajasthan border (nearest confirmed: Banswara RJ 67 km)"
+8171,Nandesari,Gujarat,"Agency is an industry association; Gujarat (nearest confirmed: Vatva GJ)"
+10917,Maihar,Madhya Pradesh,"Agency is a company; 39 km from agency-confirmed Satna MP"
+307463,Gangtok,Sikkim,"SSPCB = Sikkim SPCB; Gangtok is the Sikkim capital; no confirmed Sikkim station exists"
+3409340,Gangtok,Sikkim,"SSPCB = Sikkim SPCB; Gangtok is the Sikkim capital; no confirmed Sikkim station exists"
+3409371,Surat,Gujarat,"SMC = Surat Municipal Corporation; 54 km from agency-confirmed Ankleshwar GJ"
+3410003,Sri Vijaya Puram,Andaman and Nicobar Islands,"ANPCC; 11.65N 92.73E is in the Andaman Islands (1,206 km from any mainland monitor)"
+3410004,Panchgaon,Haryana,"Amity University Panchgaon; 5.5 km from agency-confirmed Manesar HR"
+3409459,Amravati,Maharashtra,"Name spells ""Amaravati"" but agency MPCB; 2.5 km from agency-confirmed Amravati MH"
