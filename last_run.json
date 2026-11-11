@@ -1,9 +1,9 @@
 {
-  "last_rollup_utc": "2026-11-10T03:32:43+00:00",
-  "rollup_ist_date": "2026-11-09",
-  "cities_with_data": 59,
-  "hourly_rows": 243065,
-  "latest_reading_utc": "2026-11-09T16:30:00+00:00",
+  "last_rollup_utc": "2026-11-11T01:34:26+00:00",
+  "rollup_ist_date": "2026-11-10",
+  "cities_with_data": 57,
+  "hourly_rows": 248787,
+  "latest_reading_utc": "2026-11-10T20:30:00+00:00",
   "active_locations": 481,
-  "db_size_mb": 110.06
+  "db_size_mb": 110.65
 }
